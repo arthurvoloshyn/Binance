@@ -62,16 +62,17 @@ class MarketPairs extends Component {
   };
 
   setActiveTab = e => {
+    const { marketPairs, setActiveMarket } = this.props;
     const market = e.currentTarget
       ? e.currentTarget.getAttribute('data-tab')
       : e;
     const data = {
-      filtered_pairs: Object.keys(this.props.marketPairs).filter(item =>
+      filtered_pairs: Object.keys(marketPairs).filter(item =>
         item.endsWith(market),
       ),
       market: market,
     };
-    this.props.setActiveMarket(data);
+    setActiveMarket(data);
   };
 
   switchSocketStreams = () => {
@@ -83,7 +84,7 @@ class MarketPairs extends Component {
   };
 
   connectSocketStreams = streams => {
-    const { toggleSocketStreams } = this.props;
+    const { toggleSocketStreams, updateMarketPairs, activeMarket } = this.props;
     streams = streams.join('/');
     const connection = btoa(streams);
     this[connection] = new WebSocket(
@@ -96,8 +97,8 @@ class MarketPairs extends Component {
 
     this[connection].onmessage = ({ data }) => {
       const ticker = this.getTickerBySymbol(JSON.parse(data).data);
-      this.props.updateMarketPairs(ticker);
-      !this.props.activeMarket.market && this.setActiveTab('BTC');
+      updateMarketPairs(ticker);
+      !activeMarket.market && this.setActiveTab('BTC');
       this.setState({
         isLoaded: true,
       });
