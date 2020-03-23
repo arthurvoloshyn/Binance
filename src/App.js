@@ -7,7 +7,7 @@ const App = () => (
   <Router basename="/Binance/">
     <Fragment>
       <Header />
-      <main role="main">
+      <main role="main" className="main">
         <div className="container-fluid">
           <div className="row">
             <div className="col-12">

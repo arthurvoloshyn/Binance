@@ -11,7 +11,7 @@ const Row = ({
   quoteVolume,
 }) => (
   <React.Fragment>
-    <div className="d-none d-sm-inline">
+    <div className="d-none d-md-inline">
       <div className="row table-row small py-1">
         <div className="col">{symbol}</div>
         <div className="col">{new BigNumber(lastPrice).toFormat(null, 1)}</div>
@@ -27,11 +27,18 @@ const Row = ({
         </div>
       </div>
     </div>
-    <div className="d-inline d-sm-none">
+    <div className="d-inline d-md-none">
       <div className="row table-row small py-1">
-        <div className="col-12">
+        <div className="col-4">
+          <div className="font-weight-light text-muted small">Pair</div>
           <span className="font-weight-bold">{symbol}</span>
-          <span>{new BigNumber(lastPrice).toFormat(null, 1)}</span>{' '}
+        </div>
+        <div className="col-4">
+          <div className="font-weight-light text-muted small">Last Price</div>
+          <span>{new BigNumber(lastPrice).toFormat(null, 1)}</span>
+        </div>
+        <div className="col-4">
+          <div className="font-weight-light text-muted small">Change</div>
           <span
             className={priceChangePercent < 0 ? 'text-danger' : 'text-success'}
           >{`${new BigNumber(priceChangePercent).toFormat(2, 1)}%`}</span>

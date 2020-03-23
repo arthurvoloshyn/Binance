@@ -7,7 +7,7 @@ const DataTable = ({ ticker, filter }) => {
 
   return (
     <Fragment>
-      <div className="d-none d-sm-inline">
+      <div className="d-none d-md-inline">
         <div className="row table-header small font-weight-bold py-1">
           <div className="col">Pair</div>
           <div className="col">Last Price</div>
