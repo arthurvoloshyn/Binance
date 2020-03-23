@@ -37,19 +37,19 @@ const Row = ({
           >{`${new BigNumber(priceChangePercent).toFormat(2, 1)}%`}</span>
         </div>
         <div className="col-4">
-          <div className="font-weight-light text-muted small">24h High</div>
+          <div className="font-weight-light text-muted small">High</div>
           <span className="small">
             {new BigNumber(highPrice).toFormat(null, 1)}
           </span>
         </div>
         <div className="col-4">
-          <div className="font-weight-light text-muted small">24h Low</div>
+          <div className="font-weight-light text-muted small">Low</div>
           <span className="small">
             {new BigNumber(lowPrice).toFormat(null, 1)}
           </span>
         </div>
         <div className="col-4">
-          <div className="font-weight-light text-muted small">24h Volume</div>
+          <div className="font-weight-light text-muted small">Volume</div>
           <span className="small">
             {new BigNumber(quoteVolume).toFormat(null, 1)}
           </span>

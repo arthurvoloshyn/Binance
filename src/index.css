@@ -70,8 +70,13 @@ main {
   }
 }
 
-.nav.nav-tabs .nav-item {
+.nav.nav-tabs .nav-link {
+  background-color: transparent;
   cursor: pointer;
+}
+
+.nav.nav-tabs .nav-link.active {
+  background-color: #fff;
 }
 
 .table-row,
@@ -84,19 +89,4 @@ main {
 
 .table-row:hover {
   background: rgb(253, 247, 236);
-}
-
-.trade-history .card-header,
-.order-book .card-header {
-  background: #fff;
-}
-
-.trade-history .list-group,
-.order-book .list-group {
-  height: calc(100vh - 230px);
-  overflow: scroll;
-}
-
-.order-book .progress {
-  background: none;
 }
