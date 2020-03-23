@@ -1,17 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-
 import { BASE_PATH, STREAM_PARAM, STREAM_PATH } from '../../constants';
-
 import {
   setActiveMarket,
   toggleSocketStreams,
   updateMarketPairs,
 } from '../../actions';
-
 import Loader from '../../components/Loader';
-
 import DataTable from '../../components/DataTable/DataTable';
 
 class MarketPairs extends Component {

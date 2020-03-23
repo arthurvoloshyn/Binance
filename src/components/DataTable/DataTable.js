@@ -1,20 +1,12 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
-
 import Row from '../Row';
 
 const DataTable = ({ ticker, filter }) => {
-  const rows = [];
   const tickerArray = Object.values(ticker);
 
-  tickerArray.forEach(row => {
-    if (filter.includes(row.symbol)) {
-      rows.push(<Row {...row} key={row.symbol} />);
-    }
-  });
-
   return (
-    <React.Fragment>
+    <Fragment>
       <div className="d-none d-sm-inline">
         <div className="row table-header small font-weight-bold py-1">
           <div className="col">Pair</div>
@@ -25,8 +17,10 @@ const DataTable = ({ ticker, filter }) => {
           <div className="col">Volume</div>
         </div>
       </div>
-      {rows}
-    </React.Fragment>
+      {tickerArray.map(row =>
+        filter.includes(row.symbol) ? <Row key={row.symbol} {...row} /> : null,
+      )}
+    </Fragment>
   );
 };
 

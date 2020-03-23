@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import Header from './components/Header';
 import MarketPairs from './containers/MarketPairs';
+import Header from './components/Header';
 
 const App = () => (
   <Router basename="/Binance/">
-    <React.Fragment>
+    <Fragment>
       <Header />
       <main role="main">
         <div className="container-fluid">
@@ -16,7 +16,7 @@ const App = () => (
           </div>
         </div>
       </main>
-    </React.Fragment>
+    </Fragment>
   </Router>
 );
 

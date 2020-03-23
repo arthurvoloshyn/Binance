@@ -1,7 +1,6 @@
 import { createStore, applyMiddleware, compose } from 'redux';
 import logger from 'redux-logger';
 import { save, load } from 'redux-localstorage-simple';
-
 import reducer from '../reducers';
 
 const composeEnhancers =
