@@ -4,12 +4,22 @@ import { save, load } from 'redux-localstorage-simple';
 
 import reducer from '../reducers';
 
-const composeEnhancers = process.env.NODE_ENV !== 'production' && typeof window === 'object' && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({}) : compose;
+const composeEnhancers =
+  process.env.NODE_ENV !== 'production' &&
+  typeof window === 'object' &&
+  window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
+    ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({})
+    : compose;
 
-const configureStore = preloadedState => createStore(reducer, preloadedState, composeEnhancers(applyMiddleware(logger, save({ namespace: 'markets' }))));
+const configureStore = preloadedState =>
+  createStore(
+    reducer,
+    preloadedState,
+    composeEnhancers(applyMiddleware(logger, save({ namespace: 'markets' }))),
+  );
 
 const preloadedState = load({ namespace: 'markets' }) || {};
 
 const store = configureStore(preloadedState);
 
-export default store
+export default store;

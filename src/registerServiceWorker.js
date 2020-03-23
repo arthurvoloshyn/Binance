@@ -14,8 +14,8 @@ const isLocalhost = Boolean(
     window.location.hostname === '[::1]' ||
     // 127.0.0.1/8 is considered localhost for IPv4.
     window.location.hostname.match(
-      /^127(?:\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){3}$/
-    )
+      /^127(?:\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){3}$/,
+    ),
 );
 
 export default function register() {
@@ -39,10 +39,12 @@ export default function register() {
         // Add some additional logging to localhost, pointing developers to the
         // service worker/PWA documentation.
         navigator.serviceWorker.ready.then(() => {
+          /* eslint-disable no-console */
           console.log(
             'This web app is being served cache-first by a service ' +
-              'worker. To learn more, visit https://goo.gl/SC7cgQ'
+              'worker. To learn more, visit https://goo.gl/SC7cgQ',
           );
+          /* eslint-enable */
         });
       } else {
         // Is not local host. Just register service worker
@@ -65,19 +67,19 @@ function registerValidSW(swUrl) {
               // the fresh content will have been added to the cache.
               // It's the perfect time to display a "New content is
               // available; please refresh." message in your web app.
-              console.log('New content is available; please refresh.');
+              console.log('New content is available; please refresh.'); // eslint-disable-line
             } else {
               // At this point, everything has been precached.
               // It's the perfect time to display a
               // "Content is cached for offline use." message.
-              console.log('Content is cached for offline use.');
+              console.log('Content is cached for offline use.'); // eslint-disable-line
             }
           }
         };
       };
     })
     .catch(error => {
-      console.error('Error during service worker registration:', error);
+      console.error('Error during service worker registration:', error); // eslint-disable-line
     });
 }
 
@@ -102,9 +104,11 @@ function checkValidServiceWorker(swUrl) {
       }
     })
     .catch(() => {
+      /* eslint-disable no-console */
       console.log(
-        'No internet connection found. App is running in offline mode.'
+        'No internet connection found. App is running in offline mode.',
       );
+      /* eslint-enable */
     });
 }
 
