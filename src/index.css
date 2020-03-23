@@ -64,14 +64,14 @@ main{
 .nav.nav-tabs .nav-item{
   cursor: pointer;
 }
-a.table-row,
+.table-row,
 .table-header{
   background: #ffffff;
   text-decoration: none;
   border-bottom: 1px solid rgb(240, 240, 240);
   color: rgb(51, 51, 51);
 }
-a:hover.table-row{
+.table-row:hover{
   background: rgb(253, 247, 236);
 }
 
