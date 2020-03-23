@@ -1,12 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Binance from '../../imgs/Binance.svg';
+import logo from '../../imgs/logo.svg';
 
 const Header = () => (
   <header>
     <nav className="navbar navbar-expand-sm navbar-dark bg-dark">
       <Link className="navbar-brand" to="/">
-        <img src={Binance} height="25" alt="Binance Logo" />
+        <img src={logo} height="25" alt="Binance Logo" />
       </Link>
       <button
         className="navbar-toggler"
