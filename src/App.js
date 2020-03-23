@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Header from './components/header';
-import MarketPairs from './containers/marketpairs';
+import MarketPairs from './containers/MarketPairs';
 
 const App = () => (
   <Router basename="/Binance/">
