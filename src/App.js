@@ -11,13 +11,13 @@ const App = () => (
       <Fragment>
         <Header />
         <main role="main" className="main">
-          <div className="container-fluid">
+          <section className="container-fluid">
             <div className="row">
               <div className="col-12">
                 <Route exact path="/" component={MarketPairs} />
               </div>
             </div>
-          </div>
+          </section>
         </main>
       </Fragment>
     </Router>

@@ -1,0 +1,19 @@
+.table {
+  padding: 0;
+
+  .table-item {
+    list-style: none;
+  }
+
+  .table-row,
+  .table-header {
+    background: $light;
+    border-bottom: 1px solid #f0f0f0;
+    color: #333;
+    text-decoration: none;
+  }
+
+  .table-row:hover {
+    background: #fdf7ec;
+  }
+}

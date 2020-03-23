@@ -1,0 +1,8 @@
+.nav.nav-tabs .nav-link {
+  background-color: transparent;
+  cursor: pointer;
+
+  &.active {
+    background-color: $light;
+  }
+}

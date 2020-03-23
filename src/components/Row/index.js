@@ -10,8 +10,8 @@ const Row = ({
   lowPrice,
   quoteVolume,
 }) => (
-  <React.Fragment>
-    <div className="d-none d-md-inline">
+  <li className="table-item">
+    <article className="d-none d-md-inline">
       <div className="row table-row small py-1">
         <div className="col">{symbol}</div>
         <div className="col">{new BigNumber(lastPrice).toFormat(null, 1)}</div>
@@ -26,8 +26,9 @@ const Row = ({
           {new BigNumber(quoteVolume).toFormat(null, 1)}
         </div>
       </div>
-    </div>
-    <div className="d-inline d-md-none">
+    </article>
+
+    <article className="d-inline d-md-none">
       <div className="row table-row small py-1">
         <div className="col-4">
           <div className="font-weight-light text-muted small">Pair</div>
@@ -62,8 +63,8 @@ const Row = ({
           </span>
         </div>
       </div>
-    </div>
-  </React.Fragment>
+    </article>
+  </li>
 );
 
 Row.propTypes = {

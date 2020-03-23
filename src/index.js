@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import registerServiceWorker from './registerServiceWorker';
 import App from './App';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './index.css';
+import './styles/index.scss';
 
 ReactDOM.render(<App />, document.getElementById('root'));
 
