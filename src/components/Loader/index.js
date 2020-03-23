@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Loading = () => (
+const Loader = () => (
   <div className="text-center w-100">
     <div className="lds-ellipsis">
       <div />
@@ -11,4 +11,4 @@ const Loading = () => (
   </div>
 );
 
-export default Loading;
+export default Loader;

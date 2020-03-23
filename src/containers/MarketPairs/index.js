@@ -10,7 +10,7 @@ import {
   updateMarketPairs,
 } from '../../actions';
 
-import Loading from '../../components/loader/Loading';
+import Loader from '../../components/Loader';
 
 import DataTable from '../../components/DataTable/DataTable';
 
@@ -149,7 +149,7 @@ class MarketPairs extends Component {
       return <div className="alert alert-danger">{error.message}</div>;
     }
     if (!isLoaded) {
-      return <Loading />;
+      return <Loader />;
     }
     return (
       <React.Fragment>
@@ -213,7 +213,7 @@ class MarketPairs extends Component {
             filter={activeMarket.filtered_pairs}
           />
         ) : (
-          <Loading />
+          <Loader />
         )}
       </React.Fragment>
     );
