@@ -13,6 +13,7 @@ import {
   toggleSocketStreams,
   updateMarketPairs,
 } from '../../actions';
+import { getTickerBySymbol } from '../../utils';
 import Loader from '../../components/Loader';
 import Table from '../../components/Table';
 
@@ -47,36 +48,6 @@ class MarketPairs extends Component {
 
     this.streams = ['!miniTicker@arr'];
   }
-
-  getTickerBySymbol = (data = []) => {
-    const ticker = {};
-
-    data.forEach(
-      ({
-        s: symbol,
-        c: latestPrice,
-        p: priceChange,
-        P: priceChangePercent,
-        h: highPrice,
-        l: lowPrice,
-        q: quoteVolume,
-        o: openPrice,
-      }) => {
-        ticker[symbol] = {
-          symbol,
-          latestPrice,
-          priceChange,
-          priceChangePercent,
-          highPrice,
-          lowPrice,
-          quoteVolume,
-          openPrice,
-        };
-      },
-    );
-
-    return ticker;
-  };
 
   setActiveTab = e => {
     const { setActiveMarket } = this.props;
@@ -115,7 +86,7 @@ class MarketPairs extends Component {
 
     this[connection].onmessage = ({ data = {} }) => {
       const { updateMarketPairs, activeMarket } = this.props;
-      const ticker = this.getTickerBySymbol(JSON.parse(data).data) || {};
+      const ticker = getTickerBySymbol(JSON.parse(data).data) || {};
       updateMarketPairs(ticker);
 
       !activeMarket.market && this.setActiveTab('BTC');

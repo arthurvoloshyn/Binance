@@ -26,3 +26,33 @@ export const getTableDataListWithValues = (
         return { ...item };
     }
   });
+
+export const getTickerBySymbol = (data = []) => {
+  const ticker = {};
+
+  data.forEach(
+    ({
+      s: symbol,
+      c: latestPrice,
+      p: priceChange,
+      P: priceChangePercent,
+      h: highPrice,
+      l: lowPrice,
+      q: quoteVolume,
+      o: openPrice,
+    }) => {
+      ticker[symbol] = {
+        symbol,
+        latestPrice,
+        priceChange,
+        priceChangePercent,
+        highPrice,
+        lowPrice,
+        quoteVolume,
+        openPrice,
+      };
+    },
+  );
+
+  return ticker;
+};
