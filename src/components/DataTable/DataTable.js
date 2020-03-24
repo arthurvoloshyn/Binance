@@ -10,7 +10,7 @@ const DataTable = ({ ticker, filter }) => {
       <li className="d-none d-md-inline">
         <div className="row table-header small font-weight-bold py-1">
           <div className="col">Pair</div>
-          <div className="col">Last Price</div>
+          <div className="col">Lastest Price</div>
           <div className="col">Change</div>
           <div className="col">High</div>
           <div className="col">Low</div>

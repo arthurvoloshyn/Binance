@@ -4,27 +4,24 @@ import BigNumber from 'bignumber.js';
 
 const Row = ({
   symbol,
-  lastPrice,
+  latestPrice,
   priceChangePercent,
   highPrice,
   lowPrice,
   quoteVolume,
+  openPrice,
 }) => (
   <li className="table-item">
     <article className="d-none d-md-inline">
       <div className="row table-row small py-1">
         <div className="col">{symbol}</div>
-        <div className="col">{new BigNumber(lastPrice).toFormat(null, 1)}</div>
-        <div
-          className={
-            priceChangePercent < 0 ? 'col text-danger' : 'col text-success'
-          }
-        >{`${new BigNumber(priceChangePercent).toFormat(2, 1)}%`}</div>
+        <div className="col">
+          {new BigNumber(latestPrice).toFormat(null, 1)}
+        </div>
+        <div className="col">{new BigNumber(openPrice).toFormat(null, 1)}</div>
         <div className="col">{new BigNumber(highPrice).toFormat(null, 1)}</div>
         <div className="col">{new BigNumber(lowPrice).toFormat(null, 1)}</div>
-        <div className="col">
-          {new BigNumber(quoteVolume).toFormat(null, 1)}
-        </div>
+        <div className="col"></div>
       </div>
     </article>
 
@@ -35,8 +32,10 @@ const Row = ({
           <span className="font-weight-bold">{symbol}</span>
         </div>
         <div className="col-4">
-          <div className="font-weight-light text-muted small">Last Price</div>
-          <span>{new BigNumber(lastPrice).toFormat(null, 1)}</span>
+          <div className="font-weight-light text-muted small">
+            Lastest Price
+          </div>
+          <span>{new BigNumber(latestPrice).toFormat(null, 1)}</span>
         </div>
         <div className="col-4">
           <div className="font-weight-light text-muted small">Change</div>
@@ -69,20 +68,22 @@ const Row = ({
 
 Row.propTypes = {
   symbol: PropTypes.string,
-  lastPrice: PropTypes.string,
+  latestPrice: PropTypes.string,
   priceChangePercent: PropTypes.string,
   highPrice: PropTypes.string,
   lowPrice: PropTypes.string,
   quoteVolume: PropTypes.string,
+  openPrice: PropTypes.string,
 };
 
 Row.defaultProps = {
   symbol: '',
-  lastPrice: '',
+  latestPrice: '',
   priceChangePercent: '',
   highPrice: '',
   lowPrice: '',
   quoteVolume: '',
+  openPrice: '',
 };
 
 export default Row;

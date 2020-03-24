@@ -46,18 +46,31 @@ class MarketPairs extends Component {
 
   getTickerBySymbol = data => {
     const ticker = {};
-    data.forEach(item => {
-      const symbol = item.symbol || item.s;
-      ticker[symbol] = {
-        symbol: symbol,
-        lastPrice: item.lastPrice || item.c,
-        priceChange: item.priceChange || item.p,
-        priceChangePercent: item.priceChangePercent || item.P,
-        highPrice: item.highPrice || item.h,
-        lowPrice: item.lowPrice || item.l,
-        quoteVolume: item.quoteVolume || item.q,
-      };
-    });
+
+    data.forEach(
+      ({
+        s: symbol,
+        c: latestPrice,
+        p: priceChange,
+        P: priceChangePercent,
+        h: highPrice,
+        l: lowPrice,
+        q: quoteVolume,
+        o: openPrice,
+      }) => {
+        ticker[symbol] = {
+          symbol,
+          latestPrice,
+          priceChange,
+          priceChangePercent,
+          highPrice,
+          lowPrice,
+          quoteVolume,
+          openPrice,
+        };
+      },
+    );
+
     return ticker;
   };
 
