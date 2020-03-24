@@ -5,7 +5,6 @@ import BigNumber from 'bignumber.js';
 const Row = ({
   symbol,
   latestPrice,
-  priceChangePercent,
   highPrice,
   lowPrice,
   quoteVolume,
@@ -71,7 +70,6 @@ const Row = ({
 Row.propTypes = {
   symbol: PropTypes.string,
   latestPrice: PropTypes.string,
-  priceChangePercent: PropTypes.string,
   highPrice: PropTypes.string,
   lowPrice: PropTypes.string,
   quoteVolume: PropTypes.string,
@@ -81,7 +79,6 @@ Row.propTypes = {
 Row.defaultProps = {
   symbol: '',
   latestPrice: '',
-  priceChangePercent: '',
   highPrice: '',
   lowPrice: '',
   quoteVolume: '',
