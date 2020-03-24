@@ -21,7 +21,9 @@ const Row = ({
         <div className="col">{new BigNumber(openPrice).toFormat(null, 1)}</div>
         <div className="col">{new BigNumber(highPrice).toFormat(null, 1)}</div>
         <div className="col">{new BigNumber(lowPrice).toFormat(null, 1)}</div>
-        <div className="col"></div>
+        <div className="col">
+          {new BigNumber(quoteVolume).toFormat(null, 1)}
+        </div>
       </div>
     </article>
 
@@ -38,10 +40,10 @@ const Row = ({
           <span>{new BigNumber(latestPrice).toFormat(null, 1)}</span>
         </div>
         <div className="col-4">
-          <div className="font-weight-light text-muted small">Change</div>
-          <span
-            className={priceChangePercent < 0 ? 'text-danger' : 'text-success'}
-          >{`${new BigNumber(priceChangePercent).toFormat(2, 1)}%`}</span>
+          <div className="font-weight-light text-muted small">Open</div>
+          <span className="small">
+            {new BigNumber(openPrice).toFormat(null, 1)}
+          </span>
         </div>
         <div className="col-4">
           <div className="font-weight-light text-muted small">High</div>
