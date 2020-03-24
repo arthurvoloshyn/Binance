@@ -21,7 +21,6 @@ class MarketPairs extends Component {
     marketPairs: PropTypes.objectOf(PropTypes.objectOf(PropTypes.string)),
     activeMarket: PropTypes.shape({
       market: PropTypes.string,
-      filteredPairs: PropTypes.arrayOf(PropTypes.string),
     }),
     connectSocket: PropTypes.bool,
     setActiveMarket: PropTypes.func,
@@ -43,7 +42,7 @@ class MarketPairs extends Component {
     const { marketPairs, activeMarket } = this.props;
 
     this.state = {
-      isLoaded: marketPairs && activeMarket.filteredPairs,
+      isLoaded: marketPairs && activeMarket.market,
     };
 
     this.streams = ['!miniTicker@arr'];
@@ -80,18 +79,13 @@ class MarketPairs extends Component {
   };
 
   setActiveTab = e => {
-    const { marketPairs, setActiveMarket } = this.props;
+    const { setActiveMarket } = this.props;
 
     const market = e.currentTarget
       ? e.currentTarget.getAttribute('data-tab')
       : e;
 
-    const filteredPairs = Object.keys(marketPairs).filter(item =>
-      item.endsWith(market),
-    );
-
     const data = {
-      filteredPairs,
       market,
     };
     setActiveMarket(data);
@@ -106,7 +100,6 @@ class MarketPairs extends Component {
   };
 
   connectSocketStreams = streams => {
-    const { toggleSocketStreams, updateMarketPairs, activeMarket } = this.props;
     const joinedStreams = streams.join('/');
     const connection = btoa(joinedStreams);
 
@@ -115,10 +108,13 @@ class MarketPairs extends Component {
     );
 
     this[connection].onopen = () => {
+      const { toggleSocketStreams } = this.props;
+
       toggleSocketStreams(true);
     };
 
     this[connection].onmessage = ({ data = {} }) => {
+      const { updateMarketPairs, activeMarket } = this.props;
       const ticker = this.getTickerBySymbol(JSON.parse(data).data) || {};
       updateMarketPairs(ticker);
 
@@ -135,7 +131,6 @@ class MarketPairs extends Component {
   };
 
   disconnectSocketStreams = streams => {
-    const { toggleSocketStreams } = this.props;
     const joinedStreams = streams.join('/');
     const connection = btoa(joinedStreams);
 
@@ -144,6 +139,8 @@ class MarketPairs extends Component {
     }
 
     this[connection].onclose = () => {
+      const { toggleSocketStreams } = this.props;
+
       toggleSocketStreams(false);
     };
   };
@@ -203,8 +200,8 @@ class MarketPairs extends Component {
           ))}
         </ul>
 
-        {marketPairs && activeMarket.filteredPairs && (
-          <Table ticker={marketPairs} filter={activeMarket.filteredPairs} />
+        {marketPairs && activeMarket.market && (
+          <Table ticker={marketPairs} filter={activeMarket.market} />
         )}
       </Fragment>
     );

@@ -18,7 +18,7 @@ const Table = ({ ticker, filter }) => {
         </div>
       </li>
       {tickerArray.map(row =>
-        filter.includes(row.symbol) ? <Row key={row.symbol} {...row} /> : null,
+        row.symbol.endsWith(filter) ? <Row key={row.symbol} {...row} /> : null,
       )}
     </ul>
   );
@@ -26,12 +26,12 @@ const Table = ({ ticker, filter }) => {
 
 Table.propTypes = {
   ticker: PropTypes.objectOf(PropTypes.objectOf(PropTypes.string)),
-  filter: PropTypes.arrayOf(PropTypes.string),
+  filter: PropTypes.string,
 };
 
 Table.defaultProps = {
   ticker: {},
-  filter: [],
+  filter: 'BTC',
 };
 
 export default Table;
