@@ -1,20 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { TABLE_DATA_LIST } from '../../constants';
 import Row from '../Row';
 
-const DataTable = ({ ticker, filter }) => {
+const Table = ({ ticker, filter }) => {
   const tickerArray = Object.values(ticker);
 
   return (
     <ul className="table">
       <li className="d-none d-md-inline">
         <div className="row table-header small font-weight-bold py-1">
-          <div className="col">Pair</div>
-          <div className="col">Lastest Price</div>
-          <div className="col">Open</div>
-          <div className="col">High</div>
-          <div className="col">Low</div>
-          <div className="col">Volume</div>
+          {TABLE_DATA_LIST.map(({ title }) => (
+            <div key={title} className="col">
+              {title}
+            </div>
+          ))}
         </div>
       </li>
       {tickerArray.map(row =>
@@ -24,14 +24,14 @@ const DataTable = ({ ticker, filter }) => {
   );
 };
 
-DataTable.propTypes = {
+Table.propTypes = {
   ticker: PropTypes.objectOf(PropTypes.objectOf(PropTypes.string)),
   filter: PropTypes.arrayOf(PropTypes.string),
 };
 
-DataTable.defaultProps = {
+Table.defaultProps = {
   ticker: {},
   filter: [],
 };
 
-export default DataTable;
+export default Table;

@@ -1,21 +1,27 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { BASE_PATH, STREAM_PARAM, STREAM_PATH } from '../../constants';
+import cn from 'classnames';
+import {
+  BASE_PATH,
+  STREAM_PARAM,
+  STREAM_PATH,
+  PAIRS_LIST,
+} from '../../constants';
 import {
   setActiveMarket,
   toggleSocketStreams,
   updateMarketPairs,
 } from '../../actions';
 import Loader from '../../components/Loader';
-import DataTable from '../../components/DataTable';
+import Table from '../../components/Table';
 
 class MarketPairs extends Component {
   static propTypes = {
     marketPairs: PropTypes.objectOf(PropTypes.objectOf(PropTypes.string)),
     activeMarket: PropTypes.shape({
       market: PropTypes.string,
-      filtered_pairs: PropTypes.arrayOf(PropTypes.string),
+      filteredPairs: PropTypes.arrayOf(PropTypes.string),
     }),
     connectSocket: PropTypes.bool,
     setActiveMarket: PropTypes.func,
@@ -34,17 +40,16 @@ class MarketPairs extends Component {
 
   constructor(props) {
     super(props);
-
     const { marketPairs, activeMarket } = this.props;
 
     this.state = {
-      isLoaded: marketPairs && activeMarket.filtered_pairs,
+      isLoaded: marketPairs && activeMarket.filteredPairs,
     };
 
     this.streams = ['!miniTicker@arr'];
   }
 
-  getTickerBySymbol = data => {
+  getTickerBySymbol = (data = []) => {
     const ticker = {};
 
     data.forEach(
@@ -76,14 +81,18 @@ class MarketPairs extends Component {
 
   setActiveTab = e => {
     const { marketPairs, setActiveMarket } = this.props;
+
     const market = e.currentTarget
       ? e.currentTarget.getAttribute('data-tab')
       : e;
+
+    const filteredPairs = Object.keys(marketPairs).filter(item =>
+      item.endsWith(market),
+    );
+
     const data = {
-      filtered_pairs: Object.keys(marketPairs).filter(item =>
-        item.endsWith(market),
-      ),
-      market: market,
+      filteredPairs,
+      market,
     };
     setActiveMarket(data);
   };
@@ -98,20 +107,23 @@ class MarketPairs extends Component {
 
   connectSocketStreams = streams => {
     const { toggleSocketStreams, updateMarketPairs, activeMarket } = this.props;
-    streams = streams.join('/');
-    const connection = btoa(streams);
+    const joinedStreams = streams.join('/');
+    const connection = btoa(joinedStreams);
+
     this[connection] = new WebSocket(
-      `${BASE_PATH}${STREAM_PATH}?${STREAM_PARAM}${streams}`,
+      `${BASE_PATH}${STREAM_PATH}?${STREAM_PARAM}${joinedStreams}`,
     );
 
     this[connection].onopen = () => {
       toggleSocketStreams(true);
     };
 
-    this[connection].onmessage = ({ data }) => {
-      const ticker = this.getTickerBySymbol(JSON.parse(data).data);
+    this[connection].onmessage = ({ data = {} }) => {
+      const ticker = this.getTickerBySymbol(JSON.parse(data).data) || {};
       updateMarketPairs(ticker);
+
       !activeMarket.market && this.setActiveTab('BTC');
+
       this.setState({
         isLoaded: true,
       });
@@ -124,8 +136,9 @@ class MarketPairs extends Component {
 
   disconnectSocketStreams = streams => {
     const { toggleSocketStreams } = this.props;
-    streams = streams.join('/');
-    const connection = btoa(streams);
+    const joinedStreams = streams.join('/');
+    const connection = btoa(joinedStreams);
+
     if (this[connection].readyState === WebSocket.OPEN) {
       this[connection].close();
     }
@@ -158,11 +171,13 @@ class MarketPairs extends Component {
     if (error) {
       return <div className="alert alert-danger">{error.message}</div>;
     }
+
     if (!isLoaded) {
       return <Loader />;
     }
+
     return (
-      <React.Fragment>
+      <Fragment>
         <button
           type="button"
           className="btn btn-warning"
@@ -172,60 +187,26 @@ class MarketPairs extends Component {
         </button>
 
         <ul className="nav nav-tabs pt-2">
-          <li className="nav-item">
-            <button
-              className={
-                activeMarket.market === 'BNB' ? 'nav-link active' : 'nav-link'
-              }
-              onClick={this.setActiveTab}
-              data-tab="BNB"
-            >
-              BNB<span className="d-none d-sm-inline"> Markets</span>
-            </button>
-          </li>
-          <li className="nav-item">
-            <button
-              className={
-                activeMarket.market === 'BTC' ? 'nav-link active' : 'nav-link'
-              }
-              onClick={this.setActiveTab}
-              data-tab="BTC"
-            >
-              BTC<span className="d-none d-sm-inline"> Markets</span>
-            </button>
-          </li>
-          <li className="nav-item">
-            <button
-              className={
-                activeMarket.market === 'ETH' ? 'nav-link active' : 'nav-link'
-              }
-              onClick={this.setActiveTab}
-              data-tab="ETH"
-            >
-              ETH<span className="d-none d-sm-inline"> Markets</span>
-            </button>
-          </li>
-          <li className="nav-item">
-            <button
-              className={
-                activeMarket.market === 'USDT' ? 'nav-link active' : 'nav-link'
-              }
-              onClick={this.setActiveTab}
-              data-tab="USDT"
-            >
-              USDT<span className="d-none d-sm-inline"> Markets</span>
-            </button>
-          </li>
+          {PAIRS_LIST.map(pair => (
+            <li key={pair} className="nav-item">
+              <button
+                className={cn('nav-link', {
+                  active: activeMarket.market === pair,
+                })}
+                onClick={this.setActiveTab}
+                data-tab={pair}
+              >
+                {pair}
+                <span className="d-none d-sm-inline"> Markets</span>
+              </button>
+            </li>
+          ))}
         </ul>
-        {marketPairs && activeMarket.filtered_pairs ? (
-          <DataTable
-            ticker={marketPairs}
-            filter={activeMarket.filtered_pairs}
-          />
-        ) : (
-          <Loader />
+
+        {marketPairs && activeMarket.filteredPairs && (
+          <Table ticker={marketPairs} filter={activeMarket.filteredPairs} />
         )}
-      </React.Fragment>
+      </Fragment>
     );
   }
 }

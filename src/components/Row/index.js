@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import BigNumber from 'bignumber.js';
+import { getTableDataListWithValues } from '../../utils';
 
 const Row = ({
   symbol,
@@ -9,63 +9,43 @@ const Row = ({
   lowPrice,
   quoteVolume,
   openPrice,
-}) => (
-  <li className="table-item">
-    <article className="d-none d-md-inline">
-      <div className="row table-row small py-1">
-        <div className="col">{symbol}</div>
-        <div className="col">
-          {new BigNumber(latestPrice).toFormat(null, 1)}
-        </div>
-        <div className="col">{new BigNumber(openPrice).toFormat(null, 1)}</div>
-        <div className="col">{new BigNumber(highPrice).toFormat(null, 1)}</div>
-        <div className="col">{new BigNumber(lowPrice).toFormat(null, 1)}</div>
-        <div className="col">
-          {new BigNumber(quoteVolume).toFormat(null, 1)}
-        </div>
-      </div>
-    </article>
+}) => {
+  const tableDataList = getTableDataListWithValues(
+    symbol,
+    latestPrice,
+    highPrice,
+    lowPrice,
+    quoteVolume,
+    openPrice,
+  );
 
-    <article className="d-inline d-md-none">
-      <div className="row table-row small py-1">
-        <div className="col-4">
-          <div className="font-weight-light text-muted small">Pair</div>
-          <span className="font-weight-bold">{symbol}</span>
+  return (
+    <li className="table-item">
+      <article className="d-none d-md-inline">
+        <div className="row table-row small py-1">
+          {tableDataList.map(({ title, value }) => (
+            <div key={title} className="col">
+              {value}
+            </div>
+          ))}
         </div>
-        <div className="col-4">
-          <div className="font-weight-light text-muted small">
-            Lastest Price
-          </div>
-          <span>{new BigNumber(latestPrice).toFormat(null, 1)}</span>
+      </article>
+
+      <article className="d-inline d-md-none">
+        <div className="row table-row small py-1">
+          {tableDataList.map(({ title, value, bold }) => (
+            <div key={title} className="col-4">
+              <div className="font-weight-light text-muted small">{title}</div>
+              <span className={bold ? 'font-weight-bold' : 'small'}>
+                {value}
+              </span>
+            </div>
+          ))}
         </div>
-        <div className="col-4">
-          <div className="font-weight-light text-muted small">Open</div>
-          <span className="small">
-            {new BigNumber(openPrice).toFormat(null, 1)}
-          </span>
-        </div>
-        <div className="col-4">
-          <div className="font-weight-light text-muted small">High</div>
-          <span className="small">
-            {new BigNumber(highPrice).toFormat(null, 1)}
-          </span>
-        </div>
-        <div className="col-4">
-          <div className="font-weight-light text-muted small">Low</div>
-          <span className="small">
-            {new BigNumber(lowPrice).toFormat(null, 1)}
-          </span>
-        </div>
-        <div className="col-4">
-          <div className="font-weight-light text-muted small">Volume</div>
-          <span className="small">
-            {new BigNumber(quoteVolume).toFormat(null, 1)}
-          </span>
-        </div>
-      </div>
-    </article>
-  </li>
-);
+      </article>
+    </li>
+  );
+};
 
 Row.propTypes = {
   symbol: PropTypes.string,
