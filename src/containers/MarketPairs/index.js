@@ -8,7 +8,7 @@ import {
   updateMarketPairs,
 } from '../../actions';
 import Loader from '../../components/Loader';
-import DataTable from '../../components/DataTable/DataTable';
+import DataTable from '../../components/DataTable';
 
 class MarketPairs extends Component {
   static propTypes = {
