@@ -40,10 +40,13 @@ class MarketPairs extends Component {
 
   constructor(props) {
     super(props);
-    const { marketPairs, activeMarket } = this.props;
+    const {
+      marketPairs,
+      activeMarket: { market },
+    } = this.props;
 
     this.state = {
-      isLoaded: marketPairs && activeMarket.market,
+      isLoaded: marketPairs && market,
     };
 
     this.streams = ['!miniTicker@arr'];
@@ -59,6 +62,7 @@ class MarketPairs extends Component {
     const data = {
       market,
     };
+
     setActiveMarket(data);
   };
 
@@ -85,11 +89,14 @@ class MarketPairs extends Component {
     };
 
     this[connection].onmessage = ({ data = {} }) => {
-      const { updateMarketPairs, activeMarket } = this.props;
+      const {
+        updateMarketPairs,
+        activeMarket: { market },
+      } = this.props;
       const ticker = getTickerBySymbol(JSON.parse(data).data) || {};
       updateMarketPairs(ticker);
 
-      !activeMarket.market && this.setActiveTab('BTC');
+      !market && this.setActiveTab('BTC');
 
       this.setState({
         isLoaded: true,
@@ -134,7 +141,11 @@ class MarketPairs extends Component {
 
   render() {
     const { error, isLoaded } = this.state;
-    const { activeMarket, marketPairs, connectSocket } = this.props;
+    const {
+      activeMarket: { market },
+      marketPairs,
+      connectSocket,
+    } = this.props;
 
     if (error) {
       return <div className="alert alert-danger">{error.message}</div>;
@@ -159,7 +170,7 @@ class MarketPairs extends Component {
             <li key={pair} className="nav-item">
               <button
                 className={cn('nav-link', {
-                  active: activeMarket.market === pair,
+                  active: market === pair,
                 })}
                 onClick={this.setActiveTab}
                 data-tab={pair}
@@ -171,8 +182,8 @@ class MarketPairs extends Component {
           ))}
         </ul>
 
-        {marketPairs && activeMarket.market && (
-          <Table ticker={marketPairs} filter={activeMarket.market} />
+        {marketPairs && market && (
+          <Table ticker={marketPairs} filter={market} />
         )}
       </Fragment>
     );
