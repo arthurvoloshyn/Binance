@@ -99,3 +99,8 @@
 .table-row:hover {
   background: rgb(253, 247, 236);
 }
+
+.table-row .title,
+.table-header .title {
+  font-size: 1em;
+}

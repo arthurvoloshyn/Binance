@@ -160,6 +160,10 @@ class MarketPairs extends Component {
 
     return (
       <Fragment>
+        <h2 className="text-center pt-2">
+          The World&apos;s Leading Cryptocurrency Exchange
+        </h2>
+
         <div className="d-flex justify-content-center pt-2">
           <button
             type="button"

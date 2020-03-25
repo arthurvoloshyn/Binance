@@ -23,9 +23,13 @@ const Row = ({
     <li className="table-item">
       <article className="d-none d-md-inline">
         <div className="row table-row small py-1">
-          {tableDataList.map(({ title, value }) => (
-            <div key={title} className="col">
-              {value}
+          {tableDataList.map(({ title, value, bold }) => (
+            <div key={title} className="col d-flex align-items-center">
+              {bold ? (
+                <h3 className="title font-weight-normal mb-0">{value}</h3>
+              ) : (
+                <span>{value}</span>
+              )}
             </div>
           ))}
         </div>
@@ -35,7 +39,9 @@ const Row = ({
         <div className="row table-row small py-1">
           {tableDataList.map(({ title, value, bold }) => (
             <div key={title} className="col-4">
-              <div className="font-weight-light text-muted small">{title}</div>
+              <h2 className="font-weight-light text-muted small mb-0">
+                {title}
+              </h2>
 
               <span className={bold ? 'font-weight-bold' : 'small'}>
                 {value}

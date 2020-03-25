@@ -11,7 +11,7 @@ const App = () => (
     <Router basename={BASE_NAME}>
       <Fragment>
         <Header />
-        <main role="main" className="main">
+        <main className="main">
           <section className="container-fluid">
             <div className="row">
               <div className="col-12">

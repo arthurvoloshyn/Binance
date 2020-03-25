@@ -11,10 +11,10 @@ const Table = ({ ticker, filter }) => {
   return (
     <ul className="table">
       <li className="d-none d-md-inline">
-        <div className="row table-header small font-weight-bold py-1">
+        <div className="row table-header small py-1">
           {TABLE_DATA_LIST.map(({ title }) => (
             <div key={title} className="col">
-              {title}
+              <h2 className="title font-weight-bold mb-0">{title}</h2>
             </div>
           ))}
         </div>
