@@ -1,6 +1,7 @@
 import { createStore, applyMiddleware, compose } from 'redux';
 import logger from 'redux-logger';
 import { save, load } from 'redux-localstorage-simple';
+import { LOCALSTORAGE_KEY } from '../constants';
 import rootReducer from '../reducers';
 
 const composeEnhancers =
@@ -10,14 +11,16 @@ const composeEnhancers =
     ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({})
     : compose;
 
+const savedState = save({ namespace: LOCALSTORAGE_KEY });
+
 const configureStore = preloadedState =>
   createStore(
     rootReducer,
     preloadedState,
-    composeEnhancers(applyMiddleware(logger, save({ namespace: 'markets' }))),
+    composeEnhancers(applyMiddleware(logger, savedState)),
   );
 
-const preloadedState = load({ namespace: 'markets' }) || {};
+const preloadedState = load({ namespace: LOCALSTORAGE_KEY }) || {};
 
 const store = configureStore(preloadedState);
 
