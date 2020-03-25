@@ -115,7 +115,9 @@ function checkValidServiceWorker(swUrl) {
 export function unregister() {
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker.ready.then(registration => {
-      registration.unregister();
+      registration.unregister().then(() => {
+        console.log('Service worker unregistered'); // eslint-disable-line
+      });
     });
   }
 }
