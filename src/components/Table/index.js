@@ -1,7 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { TABLE_DATA_LIST } from '../../constants';
+import { TABLE_DATA_LIST, PAIRS_LIST } from '../../constants';
 import Row from '../Row';
+
+const BTC = PAIRS_LIST[1];
 
 const Table = ({ ticker, filter }) => {
   const tickerArray = Object.values(ticker);
@@ -17,6 +19,7 @@ const Table = ({ ticker, filter }) => {
           ))}
         </div>
       </li>
+
       {tickerArray.map(row =>
         row.symbol.endsWith(filter) ? <Row key={row.symbol} {...row} /> : null,
       )}
@@ -31,7 +34,7 @@ Table.propTypes = {
 
 Table.defaultProps = {
   ticker: {},
-  filter: 'BTC',
+  filter: BTC,
 };
 
 export default Table;

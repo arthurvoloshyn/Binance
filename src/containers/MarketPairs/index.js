@@ -97,9 +97,11 @@ class MarketPairs extends Component {
         activeMarket: { market },
       } = this.props;
       const ticker = getTickerBySymbol(JSON.parse(data).data) || {};
+      const BTC = PAIRS_LIST[1];
+
       updateMarketPairs(ticker);
 
-      !market && this.setActiveTab('BTC');
+      !market && this.setActiveTab(BTC);
 
       this.setState({
         isLoaded: true,

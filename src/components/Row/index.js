@@ -36,6 +36,7 @@ const Row = ({
           {tableDataList.map(({ title, value, bold }) => (
             <div key={title} className="col-4">
               <div className="font-weight-light text-muted small">{title}</div>
+
               <span className={bold ? 'font-weight-bold' : 'small'}>
                 {value}
               </span>

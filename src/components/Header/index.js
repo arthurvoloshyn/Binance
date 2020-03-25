@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
 import logo from '../../imgs/logo.svg';
 
 const Header = () => (
@@ -9,6 +8,7 @@ const Header = () => (
       <Link className="navbar-brand" to="/">
         <img src={logo} height="25" alt="Binance Logo" />
       </Link>
+
       <button
         className="navbar-toggler"
         type="button"
@@ -20,6 +20,7 @@ const Header = () => (
       >
         <span className="navbar-toggler-icon" />
       </button>
+
       <div className="collapse navbar-collapse" id="navbarNav">
         <span className="small text-white">Trade history viewer web app</span>
       </div>

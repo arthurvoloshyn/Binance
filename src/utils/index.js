@@ -11,7 +11,7 @@ export const getTableDataListWithValues = (
   TABLE_DATA_LIST.map(item => {
     switch (item.title) {
       case 'Pair':
-        return { ...item, value: symbol };
+        return { ...item, value: symbol, bold: true };
       case 'Latest Price':
         return { ...item, value: latestPrice };
       case 'Open':
