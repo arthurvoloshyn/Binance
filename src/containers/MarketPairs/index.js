@@ -160,13 +160,15 @@ class MarketPairs extends Component {
 
     return (
       <Fragment>
-        <button
-          type="button"
-          className="btn btn-warning"
-          onClick={this.switchSocketStreams}
-        >
-          {connectSocket ? 'Close' : 'Connect'}
-        </button>
+        <div className="d-flex justify-content-center pt-2">
+          <button
+            type="button"
+            className="btn btn-warning"
+            onClick={this.switchSocketStreams}
+          >
+            {connectSocket ? 'Disconnect' : 'Connect'}
+          </button>
+        </div>
 
         <ul className="nav nav-tabs pt-2">
           {PAIRS_LIST.map(pair => (
