@@ -15,5 +15,4 @@ Live demo: [Demo](https://arturw1998.github.io/Binance/)
 * React-router (via react-router-dom)
 * Bootstrap 4 (CSS only) for styling and responsiveness
 * Websocket implementation of Binance web-socket-streams 
-* Bignumber.js for precision number display and calculations
 * Bootstrapped with Create React App
