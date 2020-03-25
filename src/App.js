@@ -1,8 +1,8 @@
 import React, { Fragment } from 'react';
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import store from './store';
 import { BASE_NAME } from './constants';
+import store from './store';
 import MarketPairs from './containers/MarketPairs';
 import Header from './components/Header';
 

@@ -40,10 +40,11 @@ class MarketPairs extends Component {
 
   constructor(props) {
     super(props);
+
     const {
       marketPairs,
       activeMarket: { market },
-    } = this.props;
+    } = props;
 
     this.state = {
       isLoaded: marketPairs && market,
@@ -52,19 +53,21 @@ class MarketPairs extends Component {
     this.streams = ['!miniTicker@arr'];
   }
 
-  setActiveTab = e => {
-    const { setActiveMarket } = this.props;
+  componentDidMount() {
+    const { connectSocket } = this.props;
 
-    const market = e.currentTarget
-      ? e.currentTarget.getAttribute('data-tab')
-      : e;
+    if (connectSocket) {
+      this.connectSocketStreams(this.streams);
+    }
+  }
 
-    const data = {
-      market,
-    };
+  componentWillUnmount() {
+    const { connectSocket } = this.props;
 
-    setActiveMarket(data);
-  };
+    if (connectSocket) {
+      this.disconnectSocketStreams(this.streams);
+    }
+  }
 
   switchSocketStreams = () => {
     const { connectSocket } = this.props;
@@ -123,21 +126,19 @@ class MarketPairs extends Component {
     };
   };
 
-  componentDidMount() {
-    const { connectSocket } = this.props;
+  setActiveTab = e => {
+    const { setActiveMarket } = this.props;
 
-    if (connectSocket) {
-      this.connectSocketStreams(this.streams);
-    }
-  }
+    const market = e.currentTarget
+      ? e.currentTarget.getAttribute('data-tab')
+      : e;
 
-  componentWillUnmount() {
-    const { connectSocket } = this.props;
+    const data = {
+      market,
+    };
 
-    if (connectSocket) {
-      this.disconnectSocketStreams(this.streams);
-    }
-  }
+    setActiveMarket(data);
+  };
 
   render() {
     const { error, isLoaded } = this.state;
