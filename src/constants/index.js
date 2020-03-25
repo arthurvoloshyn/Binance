@@ -17,3 +17,5 @@ export const TABLE_DATA_LIST = [
   { title: 'Low', bold: false },
   { title: 'Volume', bold: false },
 ];
+
+export const BASE_NAME = '/Binance/';
