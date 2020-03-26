@@ -22,7 +22,7 @@ describe('activeMarket reducer', () => {
 
 describe('activeMarket reducer initial state', () => {
   it('should return the initial state', () => {
-    expect(activeMarket(initState, {})).toEqual({});
+    expect(activeMarket(initState, {})).toEqual(initState);
   });
 
   it('returns properly', () => {
