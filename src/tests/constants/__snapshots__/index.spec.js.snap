@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`constants ACTION_TYPES 1`] = `
+Object {
+  "SET_ACTIVE_MARKET": "SET_ACTIVE_MARKET",
+  "TOGGLE_SOCKET_STREAMS": "TOGGLE_SOCKET_STREAMS",
+  "UPDATE_MARKET_PAIRS": "UPDATE_MARKET_PAIRS",
+}
+`;
