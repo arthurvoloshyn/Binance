@@ -2,7 +2,7 @@ import { SET_ACTIVE_MARKET } from '../../constants';
 import activeMarket, { initState } from '../../reducers/activeMarket';
 
 describe('activeMarket reducer', () => {
-  it('SET_ACTIVE_MARKET', () => {
+  it(`${SET_ACTIVE_MARKET}`, () => {
     const action = {
       type: SET_ACTIVE_MARKET,
       data: {
