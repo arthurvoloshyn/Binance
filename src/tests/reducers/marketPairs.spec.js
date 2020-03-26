@@ -1,7 +1,9 @@
-import { UPDATE_MARKET_PAIRS } from '../../constants';
+import { ACTION_TYPES } from '../../constants';
 import marketPairs, { initState } from '../../reducers/marketPairs';
 
 describe('marketPairs reducer', () => {
+  const { UPDATE_MARKET_PAIRS } = ACTION_TYPES;
+
   const action = {
     type: UPDATE_MARKET_PAIRS,
     data: {

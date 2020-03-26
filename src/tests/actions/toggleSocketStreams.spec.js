@@ -1,7 +1,9 @@
-import { TOGGLE_SOCKET_STREAMS } from '../../constants';
+import { ACTION_TYPES } from '../../constants';
 import { toggleSocketStreams } from '../../actions';
 
 describe('toggleSocketStreams action', () => {
+  const { TOGGLE_SOCKET_STREAMS } = ACTION_TYPES;
+
   const expectedActionToggleSocketStreams = {
     type: TOGGLE_SOCKET_STREAMS,
     status: false,

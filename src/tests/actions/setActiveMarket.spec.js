@@ -1,7 +1,9 @@
-import { SET_ACTIVE_MARKET } from '../../constants';
+import { ACTION_TYPES } from '../../constants';
 import { setActiveMarket } from '../../actions';
 
 describe('setActiveMarket action', () => {
+  const { SET_ACTIVE_MARKET } = ACTION_TYPES;
+
   const expectedActionSetActiveMarket = {
     type: SET_ACTIVE_MARKET,
     data: {

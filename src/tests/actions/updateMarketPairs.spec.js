@@ -1,7 +1,9 @@
-import { UPDATE_MARKET_PAIRS } from '../../constants';
+import { ACTION_TYPES } from '../../constants';
 import { updateMarketPairs } from '../../actions';
 
 describe('updateMarketPairs action', () => {
+  const { UPDATE_MARKET_PAIRS } = ACTION_TYPES;
+
   const expectedActionUpdateMarketPairs = {
     type: UPDATE_MARKET_PAIRS,
     data: {

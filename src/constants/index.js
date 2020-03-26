@@ -1,6 +1,8 @@
-export const UPDATE_MARKET_PAIRS = 'UPDATE_MARKET_PAIRS';
-export const SET_ACTIVE_MARKET = 'SET_ACTIVE_MARKET';
-export const TOGGLE_SOCKET_STREAMS = 'TOGGLE_SOCKET_STREAMS';
+export const ACTION_TYPES = {
+  UPDATE_MARKET_PAIRS: 'UPDATE_MARKET_PAIRS',
+  SET_ACTIVE_MARKET: 'SET_ACTIVE_MARKET',
+  TOGGLE_SOCKET_STREAMS: 'TOGGLE_SOCKET_STREAMS',
+};
 
 export const BASE_PATH = 'wss://stream.binance.com';
 export const STREAM_PATH = '/stream';
@@ -18,5 +20,4 @@ export const TABLE_DATA_LIST = [
 ];
 
 export const BASE_NAME = '/Binance/';
-
 export const LOCALSTORAGE_KEY = 'markets';

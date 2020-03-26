@@ -1,7 +1,9 @@
-import { SET_ACTIVE_MARKET } from '../../constants';
+import { ACTION_TYPES } from '../../constants';
 import activeMarket, { initState } from '../../reducers/activeMarket';
 
 describe('activeMarket reducer', () => {
+  const { SET_ACTIVE_MARKET } = ACTION_TYPES;
+
   const action = {
     type: SET_ACTIVE_MARKET,
     data: {

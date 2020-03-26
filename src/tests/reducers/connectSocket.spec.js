@@ -1,7 +1,9 @@
-import { TOGGLE_SOCKET_STREAMS } from '../../constants';
+import { ACTION_TYPES } from '../../constants';
 import connectSocket, { initState } from '../../reducers/connectSocket';
 
 describe('connectSocket reducer', () => {
+  const { TOGGLE_SOCKET_STREAMS } = ACTION_TYPES;
+
   const action = {
     type: TOGGLE_SOCKET_STREAMS,
     status: false,

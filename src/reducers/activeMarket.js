@@ -1,6 +1,8 @@
-import { SET_ACTIVE_MARKET } from '../constants';
+import { ACTION_TYPES } from '../constants';
 
 export const initState = {};
+
+const { SET_ACTIVE_MARKET } = ACTION_TYPES;
 
 const activeMarket = (state = initState, { type, data }) => {
   switch (type) {
