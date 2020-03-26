@@ -15,7 +15,7 @@ describe('toggleSocketStreams action', () => {
     );
   });
 
-  it('should handle toggleSocketStreams', () => {
+  it('toggleSocketStreams should return an action', () => {
     expect(toggleSocketStreams(status)).toMatchSnapshot();
   });
 });

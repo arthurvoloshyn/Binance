@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`updateMarketPairs action should handle updateMarketPairs 1`] = `
+exports[`updateMarketPairs action updateMarketPairs should return an action 1`] = `
 Object {
   "data": Object {
     "BNBBTC": Object {},

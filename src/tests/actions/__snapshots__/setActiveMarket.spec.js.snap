@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`setActiveMarket action should handle setActiveMarket 1`] = `
+exports[`setActiveMarket action setActiveMarket should return an action 1`] = `
 Object {
   "data": Object {
     "market": "BTC",

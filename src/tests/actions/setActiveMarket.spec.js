@@ -15,7 +15,7 @@ describe('setActiveMarket action', () => {
     expect(setActiveMarket(data)).toEqual(expectedActionSetActiveMarket);
   });
 
-  it('should handle setActiveMarket', () => {
+  it('setActiveMarket should return an action', () => {
     expect(setActiveMarket(data)).toMatchSnapshot();
   });
 });

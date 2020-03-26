@@ -17,7 +17,7 @@ describe('updateMarketPairs action', () => {
     expect(updateMarketPairs(data)).toEqual(expectedActionUpdateMarketPairs);
   });
 
-  it('should handle updateMarketPairs', () => {
+  it('updateMarketPairs should return an action', () => {
     expect(updateMarketPairs(data)).toMatchSnapshot();
   });
 });
