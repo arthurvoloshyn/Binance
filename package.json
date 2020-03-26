@@ -16,7 +16,9 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom --watchAll",
+    "test": "react-scripts test --env=jsdom",
+    "test:watch": "npm test -- --watchAll --verbose",
+    "test:coverage": "npm test -- --bail --coverage",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
