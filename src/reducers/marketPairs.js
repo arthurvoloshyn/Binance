@@ -1,6 +1,6 @@
 import { UPDATE_MARKET_PAIRS } from '../constants';
 
-const initState = {};
+export const initState = {};
 
 const marketPairs = (state = initState, { type, data }) => {
   switch (type) {

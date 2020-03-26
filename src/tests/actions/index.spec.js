@@ -9,7 +9,7 @@ import {
   toggleSocketStreams,
 } from '../../actions';
 
-describe('Index actions', () => {
+describe('index actions', () => {
   it('setActiveMarket', () => {
     const expectedActionSetActiveMarket = {
       type: SET_ACTIVE_MARKET,

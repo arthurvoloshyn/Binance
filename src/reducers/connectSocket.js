@@ -1,6 +1,6 @@
 import { TOGGLE_SOCKET_STREAMS } from '../constants';
 
-const initState = true;
+export const initState = true;
 
 const connectSocket = (state = initState, { type, status }) => {
   switch (type) {
