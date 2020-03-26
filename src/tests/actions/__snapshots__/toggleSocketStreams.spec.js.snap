@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`toggleSocketStreams action should handle toggleSocketStreams 1`] = `
+Object {
+  "status": false,
+  "type": "TOGGLE_SOCKET_STREAMS",
+}
+`;

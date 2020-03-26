@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`updateMarketPairs action should handle updateMarketPairs 1`] = `
+Object {
+  "data": Object {
+    "BNBBTC": Object {},
+    "ENJBTC": Object {},
+    "ETHUSDT": Object {},
+  },
+  "type": "UPDATE_MARKET_PAIRS",
+}
+`;
