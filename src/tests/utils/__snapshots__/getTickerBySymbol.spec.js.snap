@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`getTickerBySymbol getTickerBySymbol toMatchSnapshot 1`] = `
+Object {
+  "BTCUSDT": Object {
+    "highPrice": "6842.59000000",
+    "latestPrice": "6626.19000000",
+    "lowPrice": "6573.41000000",
+    "openPrice": "6620.12000000",
+    "priceChange": undefined,
+    "priceChangePercent": undefined,
+    "quoteVolume": "545581317.71130550",
+    "symbol": "BTCUSDT",
+  },
+  "LRCBTC": Object {
+    "highPrice": "0.00000476",
+    "latestPrice": "0.00000438",
+    "lowPrice": "0.00000403",
+    "openPrice": "0.00000411",
+    "priceChange": undefined,
+    "priceChangePercent": undefined,
+    "quoteVolume": "86.99725405",
+    "symbol": "LRCBTC",
+  },
+}
+`;
+
+exports[`getTickerBySymbol initial state getTickerBySymbol without data toMatchSnapshot 1`] = `Object {}`;

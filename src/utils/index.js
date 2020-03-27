@@ -1,14 +1,17 @@
 import { LISTS } from '../constants';
 
-export const getTableDataListWithValues = (
-  symbol,
-  latestPrice,
-  openPrice,
-  highPrice,
-  lowPrice,
-  quoteVolume,
-) => {
+export const getTableDataListWithValues = (...data) => {
+  const [
+    symbol,
+    latestPrice,
+    openPrice,
+    highPrice,
+    lowPrice,
+    quoteVolume,
+  ] = data;
   const { TABLE_DATA_LIST } = LISTS;
+
+  if (!data.length) return TABLE_DATA_LIST;
 
   return TABLE_DATA_LIST.map(item => {
     switch (item.title) {

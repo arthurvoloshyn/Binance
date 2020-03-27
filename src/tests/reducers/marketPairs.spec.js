@@ -15,11 +15,13 @@ describe('marketPairs reducer', () => {
 
   const { data } = action;
 
+  const expectedData = {
+    ...initState,
+    ...data,
+  };
+
   it(`${UPDATE_MARKET_PAIRS}`, () => {
-    expect(marketPairs(initState, action)).toEqual({
-      ...initState,
-      ...data,
-    });
+    expect(marketPairs(initState, action)).toEqual(expectedData);
   });
 
   it(`should handle ${UPDATE_MARKET_PAIRS}`, () => {

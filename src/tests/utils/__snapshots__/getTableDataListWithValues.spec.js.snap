@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`getTableDataListWithValues getTableDataListWithValues toMatchSnapshot 1`] = `
+Array [
+  Object {
+    "bold": true,
+    "title": "Pair",
+    "value": "BNBBTC",
+  },
+  Object {
+    "title": "Latest Price",
+    "value": "0.00184990",
+  },
+  Object {
+    "title": "Open",
+    "value": "0.00187580",
+  },
+  Object {
+    "title": "High",
+    "value": "0.00182500",
+  },
+  Object {
+    "title": "Low",
+    "value": "2332.46079005",
+  },
+  Object {
+    "title": "Volume",
+    "value": "0.00184780",
+  },
+]
+`;
+
+exports[`getTableDataListWithValues initial state getTableDataListWithValues without data toMatchSnapshot 1`] = `
+Array [
+  Object {
+    "title": "Pair",
+  },
+  Object {
+    "title": "Latest Price",
+  },
+  Object {
+    "title": "Open",
+  },
+  Object {
+    "title": "High",
+  },
+  Object {
+    "title": "Low",
+  },
+  Object {
+    "title": "Volume",
+  },
+]
+`;
