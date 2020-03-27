@@ -15,14 +15,14 @@ const composeEnhancers =
 
 const savedState = save({ namespace: LOCALSTORAGE_KEY });
 
-const configureStore = preloadedState =>
+const configureStore = (preloadedState = {}) =>
   createStore(
     rootReducer,
     preloadedState,
     composeEnhancers(applyMiddleware(logger, savedState)),
   );
 
-const preloadedState = load({ namespace: LOCALSTORAGE_KEY }) || {};
+const preloadedState = load({ namespace: LOCALSTORAGE_KEY });
 
 const store = configureStore(preloadedState);
 

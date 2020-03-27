@@ -1,15 +1,17 @@
 import { LISTS } from '../../constants';
 import { getTableDataListWithValues } from '../../utils';
 
-describe('getTableDataListWithValues', () => {
-  const symbol = 'BNBBTC';
-  const latestPrice = '0.00184990';
-  const openPrice = '0.00187580';
-  const highPrice = '0.00182500';
-  const lowPrice = '2332.46079005';
-  const quoteVolume = '0.00184780';
+const { TABLE_DATA_LIST } = LISTS;
 
-  it('getTableDataListWithValues with data', () => {
+const symbol = 'BNBBTC';
+const latestPrice = '0.00184990';
+const openPrice = '0.00187580';
+const highPrice = '0.00182500';
+const lowPrice = '2332.46079005';
+const quoteVolume = '0.00184780';
+
+describe('getTableDataListWithValues', () => {
+  it('getTableDataListWithValues with TABLE_DATA_LIST', () => {
     const expectedData = [
       { title: 'Pair', value: symbol, bold: true },
       { title: 'Latest Price', value: latestPrice },
@@ -21,6 +23,7 @@ describe('getTableDataListWithValues', () => {
 
     expect(
       getTableDataListWithValues(
+        TABLE_DATA_LIST,
         symbol,
         latestPrice,
         openPrice,
@@ -31,9 +34,10 @@ describe('getTableDataListWithValues', () => {
     ).toEqual(expectedData);
   });
 
-  it('getTableDataListWithValues toMatchSnapshot', () => {
+  it('getTableDataListWithValues with TABLE_DATA_LIST toMatchSnapshot', () => {
     expect(
       getTableDataListWithValues(
+        TABLE_DATA_LIST,
         symbol,
         latestPrice,
         openPrice,
@@ -47,12 +51,47 @@ describe('getTableDataListWithValues', () => {
 
 describe('getTableDataListWithValues initial state', () => {
   it('getTableDataListWithValues without data', () => {
-    const { TABLE_DATA_LIST } = LISTS;
-
     expect(getTableDataListWithValues()).toEqual(TABLE_DATA_LIST);
   });
 
   it('getTableDataListWithValues without data toMatchSnapshot', () => {
     expect(getTableDataListWithValues()).toMatchSnapshot();
+  });
+});
+
+describe('getTableDataListWithValues fake state', () => {
+  const list = [
+    { title: 'Baase asset' },
+    { title: 'Quote asset' },
+    { title: 'Parent market' },
+    { title: 'Category of the parent market' },
+  ];
+
+  it('getTableDataListWithValues with fake data', () => {
+    expect(
+      getTableDataListWithValues(
+        list,
+        symbol,
+        latestPrice,
+        openPrice,
+        highPrice,
+        lowPrice,
+        quoteVolume,
+      ),
+    ).toEqual(list);
+  });
+
+  it('getTableDataListWithValues with fake data toMatchSnapshot', () => {
+    expect(
+      getTableDataListWithValues(
+        list,
+        symbol,
+        latestPrice,
+        openPrice,
+        highPrice,
+        lowPrice,
+        quoteVolume,
+      ),
+    ).toMatchSnapshot();
   });
 });

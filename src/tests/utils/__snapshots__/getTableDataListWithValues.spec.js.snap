@@ -1,6 +1,23 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`getTableDataListWithValues getTableDataListWithValues toMatchSnapshot 1`] = `
+exports[`getTableDataListWithValues fake state getTableDataListWithValues with fake data toMatchSnapshot 1`] = `
+Array [
+  Object {
+    "title": "Baase asset",
+  },
+  Object {
+    "title": "Quote asset",
+  },
+  Object {
+    "title": "Parent market",
+  },
+  Object {
+    "title": "Category of the parent market",
+  },
+]
+`;
+
+exports[`getTableDataListWithValues getTableDataListWithValues with TABLE_DATA_LIST toMatchSnapshot 1`] = `
 Array [
   Object {
     "bold": true,

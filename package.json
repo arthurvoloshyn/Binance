@@ -18,7 +18,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "test:watch": "npm test -- --watchAll --verbose",
-    "test:coverage": "npm test -- --bail --coverage",
+    "test:coverage": "npm test -- --bail --coverage --watchAll",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",

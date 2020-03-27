@@ -1,6 +1,8 @@
 import { LISTS } from '../constants';
 
-export const getTableDataListWithValues = (...data) => {
+const { TABLE_DATA_LIST } = LISTS;
+
+export const getTableDataListWithValues = (list = TABLE_DATA_LIST, ...data) => {
   const [
     symbol,
     latestPrice,
@@ -9,11 +11,10 @@ export const getTableDataListWithValues = (...data) => {
     lowPrice,
     quoteVolume,
   ] = data;
-  const { TABLE_DATA_LIST } = LISTS;
 
-  if (!data.length) return TABLE_DATA_LIST;
+  if (!data.length) return list;
 
-  return TABLE_DATA_LIST.map(item => {
+  return list.map(item => {
     switch (item.title) {
       case 'Pair':
         return { ...item, value: symbol, bold: true };
