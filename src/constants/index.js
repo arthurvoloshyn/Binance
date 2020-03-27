@@ -4,20 +4,26 @@ export const ACTION_TYPES = {
   TOGGLE_SOCKET_STREAMS: 'TOGGLE_SOCKET_STREAMS',
 };
 
-export const BASE_PATH = 'wss://stream.binance.com';
-export const STREAM_PATH = '/stream';
-export const STREAM_PARAM = 'streams=';
+export const PATHS = {
+  BASE_PATH: 'wss://stream.binance.com',
+  STREAM_PATH: '/stream',
+  STREAM_PARAM: 'streams=',
+};
 
-export const PAIRS_LIST = ['BNB', 'BTC', 'ETH', 'USDT'];
-export const DOTS_LIST = [{ id: 1 }, { id: 2 }, { id: 3 }, { id: 4 }];
-export const TABLE_DATA_LIST = [
-  { title: 'Pair' },
-  { title: 'Latest Price' },
-  { title: 'Open' },
-  { title: 'High' },
-  { title: 'Low' },
-  { title: 'Volume' },
-];
+export const LISTS = {
+  PAIRS_LIST: ['BNB', 'BTC', 'ETH', 'USDT'],
+  DOTS_LIST: [{ id: 1 }, { id: 2 }, { id: 3 }, { id: 4 }],
+  TABLE_DATA_LIST: [
+    { title: 'Pair' },
+    { title: 'Latest Price' },
+    { title: 'Open' },
+    { title: 'High' },
+    { title: 'Low' },
+    { title: 'Volume' },
+  ],
+};
 
-export const BASE_NAME = '/Binance/';
-export const LOCALSTORAGE_KEY = 'markets';
+export const CONFIG = {
+  BASE_NAME: '/Binance/',
+  LOCALSTORAGE_KEY: 'markets',
+};

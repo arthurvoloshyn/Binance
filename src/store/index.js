@@ -1,8 +1,10 @@
 import { createStore, applyMiddleware, compose } from 'redux';
 import logger from 'redux-logger';
 import { save, load } from 'redux-localstorage-simple';
-import { LOCALSTORAGE_KEY } from '../constants';
+import { CONFIG } from '../constants';
 import rootReducer from '../reducers';
+
+const { LOCALSTORAGE_KEY } = CONFIG;
 
 const composeEnhancers =
   process.env.NODE_ENV !== 'production' &&

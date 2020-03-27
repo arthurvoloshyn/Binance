@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { TABLE_DATA_LIST, PAIRS_LIST } from '../../constants';
+import { LISTS } from '../../constants';
 import Row from '../Row';
 
+const { TABLE_DATA_LIST, PAIRS_LIST } = LISTS;
 const BTC = PAIRS_LIST[1];
 
 const Table = ({ ticker, filter }) => {

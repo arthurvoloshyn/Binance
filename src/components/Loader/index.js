@@ -1,5 +1,7 @@
 import React from 'react';
-import { DOTS_LIST } from '../../constants';
+import { LISTS } from '../../constants';
+
+const { DOTS_LIST } = LISTS;
 
 const Loader = () => (
   <div className="text-center w-100">

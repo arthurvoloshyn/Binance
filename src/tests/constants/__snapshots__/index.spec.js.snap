@@ -7,3 +7,63 @@ Object {
   "UPDATE_MARKET_PAIRS": "UPDATE_MARKET_PAIRS",
 }
 `;
+
+exports[`constants CONFIG 1`] = `
+Object {
+  "BASE_NAME": "/Binance/",
+  "LOCALSTORAGE_KEY": "markets",
+}
+`;
+
+exports[`constants LISTS 1`] = `
+Object {
+  "DOTS_LIST": Array [
+    Object {
+      "id": 1,
+    },
+    Object {
+      "id": 2,
+    },
+    Object {
+      "id": 3,
+    },
+    Object {
+      "id": 4,
+    },
+  ],
+  "PAIRS_LIST": Array [
+    "BNB",
+    "BTC",
+    "ETH",
+    "USDT",
+  ],
+  "TABLE_DATA_LIST": Array [
+    Object {
+      "title": "Pair",
+    },
+    Object {
+      "title": "Latest Price",
+    },
+    Object {
+      "title": "Open",
+    },
+    Object {
+      "title": "High",
+    },
+    Object {
+      "title": "Low",
+    },
+    Object {
+      "title": "Volume",
+    },
+  ],
+}
+`;
+
+exports[`constants PATHS 1`] = `
+Object {
+  "BASE_PATH": "wss://stream.binance.com",
+  "STREAM_PARAM": "streams=",
+  "STREAM_PATH": "/stream",
+}
+`;

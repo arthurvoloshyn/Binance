@@ -1,4 +1,4 @@
-import { TABLE_DATA_LIST } from '../constants';
+import { LISTS } from '../constants';
 
 export const getTableDataListWithValues = (
   symbol,
@@ -7,8 +7,10 @@ export const getTableDataListWithValues = (
   highPrice,
   lowPrice,
   quoteVolume,
-) =>
-  TABLE_DATA_LIST.map(item => {
+) => {
+  const { TABLE_DATA_LIST } = LISTS;
+
+  return TABLE_DATA_LIST.map(item => {
     switch (item.title) {
       case 'Pair':
         return { ...item, value: symbol, bold: true };
@@ -26,6 +28,7 @@ export const getTableDataListWithValues = (
         return { ...item };
     }
   });
+};
 
 export const getTickerBySymbol = (data = []) => {
   const ticker = {};

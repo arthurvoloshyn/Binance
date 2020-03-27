@@ -2,12 +2,7 @@ import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import cn from 'classnames';
-import {
-  BASE_PATH,
-  STREAM_PARAM,
-  STREAM_PATH,
-  PAIRS_LIST,
-} from '../../constants';
+import { PATHS, LISTS } from '../../constants';
 import {
   setActiveMarket,
   toggleSocketStreams,
@@ -16,6 +11,8 @@ import {
 import { getTickerBySymbol } from '../../utils';
 import Loader from '../../components/Loader';
 import Table from '../../components/Table';
+
+const { PAIRS_LIST } = LISTS;
 
 class MarketPairs extends Component {
   static propTypes = {
@@ -78,6 +75,7 @@ class MarketPairs extends Component {
   };
 
   connectSocketStreams = streams => {
+    const { BASE_PATH, STREAM_PATH, STREAM_PARAM } = PATHS;
     const joinedStreams = streams.join('/');
     const connection = btoa(joinedStreams);
 
