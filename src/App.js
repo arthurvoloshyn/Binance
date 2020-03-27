@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { CONFIG } from './constants';
@@ -11,18 +11,16 @@ const { BASE_NAME } = CONFIG;
 const App = () => (
   <Provider store={store}>
     <Router basename={BASE_NAME}>
-      <Fragment>
-        <Header />
-        <main className="main">
-          <section className="container-fluid">
-            <div className="row">
-              <div className="col-12">
-                <Route exact path="/" component={MarketPairs} />
-              </div>
+      <Header />
+      <main className="main">
+        <section className="container-fluid">
+          <div className="row">
+            <div className="col-12">
+              <Route exact path="/" component={MarketPairs} />
             </div>
-          </section>
-        </main>
-      </Fragment>
+          </div>
+        </section>
+      </main>
     </Router>
   </Provider>
 );
