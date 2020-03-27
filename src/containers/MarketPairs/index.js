@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import cn from 'classnames';
@@ -157,7 +157,7 @@ class MarketPairs extends Component {
     }
 
     return (
-      <Fragment>
+      <>
         <h2 className="text-center pt-2">
           The World&apos;s Leading Cryptocurrency Exchange
         </h2>
@@ -192,7 +192,7 @@ class MarketPairs extends Component {
         {marketPairs && market && (
           <Table ticker={marketPairs} filter={market} />
         )}
-      </Fragment>
+      </>
     );
   }
 }

@@ -11,16 +11,18 @@ const { BASE_NAME } = CONFIG;
 const App = () => (
   <Provider store={store}>
     <Router basename={BASE_NAME}>
-      <Header />
-      <main className="main">
-        <section className="container-fluid">
-          <div className="row">
-            <div className="col-12">
-              <Route exact path="/" component={MarketPairs} />
+      <>
+        <Header />
+        <main className="main">
+          <section className="container-fluid">
+            <div className="row">
+              <div className="col-12">
+                <Route exact path="/" component={MarketPairs} />
+              </div>
             </div>
-          </div>
-        </section>
-      </main>
+          </section>
+        </main>
+      </>
     </Router>
   </Provider>
 );
