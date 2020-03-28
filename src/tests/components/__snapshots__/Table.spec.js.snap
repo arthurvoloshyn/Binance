@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Table component Table component with default props renders properly 1`] = `ShallowWrapper {}`;
+
+exports[`Table component Table component with filter and ticker renders properly 1`] = `ShallowWrapper {}`;

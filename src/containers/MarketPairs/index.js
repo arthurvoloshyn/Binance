@@ -14,7 +14,7 @@ import Table from '../../components/Table';
 
 const { PAIRS_LIST } = LISTS;
 
-class MarketPairs extends Component {
+export class MarketPairs extends Component {
   static propTypes = {
     marketPairs: PropTypes.objectOf(PropTypes.objectOf(PropTypes.string)),
     activeMarket: PropTypes.shape({
@@ -164,7 +164,6 @@ class MarketPairs extends Component {
 
         <div className="d-flex justify-content-center pt-2">
           <button
-            type="button"
             className="btn btn-warning"
             onClick={this.switchSocketStreams}
           >
