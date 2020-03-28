@@ -50,11 +50,11 @@ describe('getTableDataListWithValues', () => {
 });
 
 describe('getTableDataListWithValues initial state', () => {
-  it('getTableDataListWithValues without data', () => {
+  it('should return the initial state', () => {
     expect(getTableDataListWithValues()).toEqual(TABLE_DATA_LIST);
   });
 
-  it('getTableDataListWithValues without data toMatchSnapshot', () => {
+  it('returns properly', () => {
     expect(getTableDataListWithValues()).toMatchSnapshot();
   });
 });

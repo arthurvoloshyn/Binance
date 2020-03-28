@@ -47,7 +47,7 @@ Array [
 ]
 `;
 
-exports[`getTableDataListWithValues initial state getTableDataListWithValues without data toMatchSnapshot 1`] = `
+exports[`getTableDataListWithValues initial state returns properly 1`] = `
 Array [
   Object {
     "title": "Pair",

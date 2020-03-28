@@ -1,8 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`marketPairs reducer initial state returns properly 1`] = `Object {}`;
+exports[`marketPairs reducer marketPairs reducer initial state returns properly 1`] = `Object {}`;
 
-exports[`marketPairs reducer should handle UPDATE_MARKET_PAIRS 1`] = `
+exports[`marketPairs reducer marketPairs reducer with action should handle UPDATE_MARKET_PAIRS 1`] = `
 Object {
   "BNBBTC": Object {},
   "ENJBTC": Object {},

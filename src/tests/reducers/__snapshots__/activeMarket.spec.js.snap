@@ -1,8 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`activeMarket reducer initial state returns properly 1`] = `Object {}`;
+exports[`activeMarket reducer activeMarket reducer initial state returns properly 1`] = `Object {}`;
 
-exports[`activeMarket reducer should handle SET_ACTIVE_MARKET 1`] = `
+exports[`activeMarket reducer activeMarket reducer with action should handle SET_ACTIVE_MARKET 1`] = `
 Object {
   "market": "BTC",
 }

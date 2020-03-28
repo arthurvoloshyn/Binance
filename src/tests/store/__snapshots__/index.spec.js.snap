@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`store should have a store 1`] = `
+exports[`store store initial state should have a store 1`] = `
 Object {
   "activeMarket": Object {},
   "connectSocket": true,

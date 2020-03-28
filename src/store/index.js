@@ -1,8 +1,8 @@
 import { createStore, applyMiddleware, compose } from 'redux';
-import logger from 'redux-logger';
 import { save, load } from 'redux-localstorage-simple';
 import { CONFIG } from '../constants';
 import rootReducer from '../reducers';
+import middleware from './middleware';
 
 const { LOCALSTORAGE_KEY } = CONFIG;
 
@@ -19,7 +19,7 @@ const configureStore = (preloadedState = {}) =>
   createStore(
     rootReducer,
     preloadedState,
-    composeEnhancers(applyMiddleware(logger, savedState)),
+    composeEnhancers(applyMiddleware(...middleware, savedState)),
   );
 
 const preloadedState = load({ namespace: LOCALSTORAGE_KEY });

@@ -2,32 +2,36 @@ import { ACTION_TYPES } from '../../constants';
 import activeMarket, { initState } from '../../reducers/activeMarket';
 
 describe('activeMarket reducer', () => {
-  const { SET_ACTIVE_MARKET } = ACTION_TYPES;
+  describe('activeMarket reducer with action', () => {
+    const { SET_ACTIVE_MARKET } = ACTION_TYPES;
 
-  const action = {
-    type: SET_ACTIVE_MARKET,
-    data: {
-      market: 'BTC',
-    },
-  };
+    const action = {
+      type: SET_ACTIVE_MARKET,
+      data: {
+        market: 'BTC',
+      },
+    };
 
-  const { data } = action;
+    it(`${SET_ACTIVE_MARKET}`, () => {
+      const { data } = action;
 
-  it(`${SET_ACTIVE_MARKET}`, () => {
-    expect(activeMarket(initState, action)).toEqual(data);
+      expect(activeMarket(initState, action)).toEqual(data);
+    });
+
+    it(`should handle ${SET_ACTIVE_MARKET}`, () => {
+      expect(activeMarket(initState, action)).toMatchSnapshot();
+    });
   });
 
-  it(`should handle ${SET_ACTIVE_MARKET}`, () => {
-    expect(activeMarket(initState, action)).toMatchSnapshot();
-  });
-});
+  describe('activeMarket reducer initial state', () => {
+    const action = {};
 
-describe('activeMarket reducer initial state', () => {
-  it('should return the initial state', () => {
-    expect(activeMarket(initState, {})).toEqual(initState);
-  });
+    it('should return the initial state', () => {
+      expect(activeMarket(initState, action)).toEqual(initState);
+    });
 
-  it('returns properly', () => {
-    expect(activeMarket(initState, {})).toMatchSnapshot();
+    it('returns properly', () => {
+      expect(activeMarket(initState, action)).toMatchSnapshot();
+    });
   });
 });

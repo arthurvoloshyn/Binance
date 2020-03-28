@@ -25,4 +25,4 @@ Object {
 }
 `;
 
-exports[`getTickerBySymbol initial state getTickerBySymbol without data toMatchSnapshot 1`] = `Object {}`;
+exports[`getTickerBySymbol initial state returns properly 1`] = `Object {}`;

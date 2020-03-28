@@ -57,11 +57,11 @@ describe('getTickerBySymbol', () => {
 describe('getTickerBySymbol initial state', () => {
   const expectedData = {};
 
-  it('getTickerBySymbol without data', () => {
+  it('should return the initial state', () => {
     expect(getTickerBySymbol()).toEqual(expectedData);
   });
 
-  it('getTickerBySymbol without data toMatchSnapshot', () => {
+  it('returns properly', () => {
     expect(getTickerBySymbol()).toMatchSnapshot();
   });
 });
