@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { LISTS } from '../../constants';
-import { getTableDataListWithValues } from '../../utils';
+import { getDataListWithValues } from '../../utils';
 
 const Row = ({
   symbol,
@@ -12,7 +12,7 @@ const Row = ({
   openPrice,
 }) => {
   const { TABLE_DATA_LIST } = LISTS;
-  const tableDataList = getTableDataListWithValues(
+  const tableDataList = getDataListWithValues(
     TABLE_DATA_LIST,
     symbol,
     latestPrice,

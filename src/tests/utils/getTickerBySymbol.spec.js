@@ -1,6 +1,6 @@
 import { getTickerBySymbol } from '../../utils';
 
-describe('getTickerBySymbol', () => {
+describe('getTickerBySymbol util', () => {
   const data = [
     {
       s: 'BTCUSDT',
@@ -20,48 +20,68 @@ describe('getTickerBySymbol', () => {
     },
   ];
 
-  it('getTickerBySymbol with data', () => {
-    const { s: s1, c: c1, h: h1, l: l1, q: q1, o: o1, p: p1, P: P1 } = data[0];
-    const { s: s2, c: c2, h: h2, l: l2, q: q2, o: o2, p: p2, P: P2 } = data[1];
-    const expectedData = {
-      [s1]: {
-        symbol: s1,
-        latestPrice: c1,
-        priceChange: p1,
-        priceChangePercent: P1,
-        highPrice: h1,
-        lowPrice: l1,
-        quoteVolume: q1,
-        openPrice: o1,
-      },
-      [s2]: {
-        symbol: s2,
-        latestPrice: c2,
-        priceChange: p2,
-        priceChangePercent: P2,
-        highPrice: h2,
-        lowPrice: l2,
-        quoteVolume: q2,
-        openPrice: o2,
-      },
-    };
+  describe('getTickerBySymbol', () => {
+    it('getTickerBySymbol with data', () => {
+      const {
+        s: s1,
+        c: c1,
+        h: h1,
+        l: l1,
+        q: q1,
+        o: o1,
+        p: p1,
+        P: P1,
+      } = data[0];
+      const {
+        s: s2,
+        c: c2,
+        h: h2,
+        l: l2,
+        q: q2,
+        o: o2,
+        p: p2,
+        P: P2,
+      } = data[1];
+      const expectedData = {
+        [s1]: {
+          symbol: s1,
+          latestPrice: c1,
+          priceChange: p1,
+          priceChangePercent: P1,
+          highPrice: h1,
+          lowPrice: l1,
+          quoteVolume: q1,
+          openPrice: o1,
+        },
+        [s2]: {
+          symbol: s2,
+          latestPrice: c2,
+          priceChange: p2,
+          priceChangePercent: P2,
+          highPrice: h2,
+          lowPrice: l2,
+          quoteVolume: q2,
+          openPrice: o2,
+        },
+      };
 
-    expect(getTickerBySymbol(data)).toEqual(expectedData);
+      expect(getTickerBySymbol(data)).toEqual(expectedData);
+    });
+
+    it('getTickerBySymbol toMatchSnapshot', () => {
+      expect(getTickerBySymbol(data)).toMatchSnapshot();
+    });
   });
 
-  it('getTickerBySymbol toMatchSnapshot', () => {
-    expect(getTickerBySymbol(data)).toMatchSnapshot();
-  });
-});
+  describe('getTickerBySymbol initial state', () => {
+    const expectedData = {};
 
-describe('getTickerBySymbol initial state', () => {
-  const expectedData = {};
+    it('should return the initial state', () => {
+      expect(getTickerBySymbol()).toEqual(expectedData);
+    });
 
-  it('should return the initial state', () => {
-    expect(getTickerBySymbol()).toEqual(expectedData);
-  });
-
-  it('returns properly', () => {
-    expect(getTickerBySymbol()).toMatchSnapshot();
+    it('returns properly', () => {
+      expect(getTickerBySymbol()).toMatchSnapshot();
+    });
   });
 });

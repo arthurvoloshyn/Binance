@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`getTickerBySymbol getTickerBySymbol toMatchSnapshot 1`] = `
+exports[`getTickerBySymbol util getTickerBySymbol getTickerBySymbol toMatchSnapshot 1`] = `
 Object {
   "BTCUSDT": Object {
     "highPrice": "6842.59000000",
@@ -25,4 +25,4 @@ Object {
 }
 `;
 
-exports[`getTickerBySymbol initial state returns properly 1`] = `Object {}`;
+exports[`getTickerBySymbol util getTickerBySymbol initial state returns properly 1`] = `Object {}`;

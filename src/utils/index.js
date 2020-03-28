@@ -2,7 +2,7 @@ import { LISTS } from '../constants';
 
 const { TABLE_DATA_LIST } = LISTS;
 
-export const getTableDataListWithValues = (list = TABLE_DATA_LIST, ...data) => {
+export const getDataListWithValues = (list = TABLE_DATA_LIST, ...data) => {
   const [
     symbol,
     latestPrice,
