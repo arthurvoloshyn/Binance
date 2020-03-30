@@ -39,7 +39,7 @@ describe('Table component', () => {
         ).toEqual('Pair');
       });
 
-      it('info', () => {
+      it('Latest Price', () => {
         expect(
           table
             .find('h2')

@@ -129,9 +129,7 @@ export class MarketPairs extends Component {
   setActiveTab = e => {
     const { setActiveMarket } = this.props;
 
-    const market = e.currentTarget
-      ? e.currentTarget.getAttribute('data-tab')
-      : e;
+    const market = e.currentTarget ? e.currentTarget.dataset.tab : e;
 
     const data = {
       market,
