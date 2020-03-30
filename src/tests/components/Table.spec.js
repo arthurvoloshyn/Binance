@@ -29,6 +29,16 @@ describe('Table component', () => {
       expect(table.find('Row')).toHaveLength(2);
     });
 
+    it('renders table', () => {
+      expect(table.find('.table')).toHaveLength(1);
+    });
+
+    describe('correct render columns', () => {
+      it('renders 6 columns', () => {
+        expect(table.find('.col')).toHaveLength(6);
+      });
+    });
+
     describe('correct render for first row', () => {
       it('Pair', () => {
         expect(
