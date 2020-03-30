@@ -77,5 +77,11 @@
   "browserslist": [
     "> 1%",
     "last 3 version"
-  ]
+  ],
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx}",
+      "!src/registerServiceWorker.js"
+    ]
+  }
 }
