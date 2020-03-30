@@ -1,12 +1,19 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { shallow } from 'enzyme';
 import App from '../App';
 
 describe('App', () => {
-  it('renders without crashing', () => {
-    const div = document.createElement('div');
+  const app = shallow(<App />);
 
-    ReactDOM.render(<App />, div);
-    ReactDOM.unmountComponentAtNode(div);
+  it('renders properly', () => {
+    expect(app).toMatchSnapshot();
+  });
+
+  it('renders <Header />', () => {
+    expect(app.find('Header')).toHaveLength(1);
+  });
+
+  it('render only one <main />', () => {
+    expect(app.find('main')).toHaveLength(1);
   });
 });
