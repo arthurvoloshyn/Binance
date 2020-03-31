@@ -5,8 +5,7 @@
   ],
   "**/*.+(js|jsx|ts|tsx)": [
     "eslint --fix --max-warnings=0",
-    "git add",
-    "jest --findRelatedTests"
+    "git add"
   ],
   "**/*.+(css|scss|sass|less)": [
     "prettier --parser css --write",
