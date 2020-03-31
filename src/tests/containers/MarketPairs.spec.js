@@ -51,7 +51,7 @@ describe('MarketPairs container', () => {
       expect(marketPairs.state()).toEqual(initialState);
     });
 
-    describe('Form handlers', () => {
+    describe('State handlers', () => {
       describe('MarketPairs container with error', () => {
         const nextState = {
           ...initialState,
