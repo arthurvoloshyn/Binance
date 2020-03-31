@@ -28,7 +28,7 @@
     "format:styles": "prettier \"src/**/*.{scss,sass,less,css}\" --parser css --write",
     "precommit": "lint-staged",
     "test:e2e": "start-server-and-test serve http://localhost:3000 test:e2e:run",
-    "test:e2e:run": "cypress run --record --key adbe5dd9-10e2-42aa-b679-da6d31ae5d51",
+    "test:e2e:run": "cypress run --record --key bc4b8a8f-d7c5-4d58-a5d0-b1a0118f42a8",
     "test:e2e:dev": "cypress open",
     "validate": "npm run lint && npm run lint:styles && npm run test:coverage && npm run build && npm run test:e2e"
   },
