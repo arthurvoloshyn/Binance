@@ -13,7 +13,7 @@ const App = () => (
     <Router basename={BASE_NAME}>
       <>
         <Header />
-        <main className="main">
+        <main className="main" data-testid="MainWrapper">
           <section className="container-fluid">
             <div className="row">
               <div className="col-12">

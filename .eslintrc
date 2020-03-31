@@ -27,7 +27,8 @@
     "es6": true,
     "node": true,
     "browser": true,
-    "jest": true
+    "jest": true,
+    "cypress/globals": true
   },
 
   "plugins": [
@@ -39,7 +40,8 @@
     "jest",
     "react-hooks",
     "babel",
-    "prettier"
+    "prettier",
+    "cypress"
   ],
 
   "globals": {

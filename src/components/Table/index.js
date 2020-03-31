@@ -10,7 +10,7 @@ const Table = ({ ticker, filter }) => {
   const tickerArray = Object.values(ticker);
 
   return (
-    <ul className="table">
+    <ul className="table" data-testid="Table">
       <li className="d-none d-md-inline">
         <div className="row table-header small py-1">
           {TABLE_DATA_LIST.map(({ title }) => (

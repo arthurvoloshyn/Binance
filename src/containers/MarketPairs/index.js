@@ -164,12 +164,13 @@ export class MarketPairs extends Component {
           <button
             className="btn btn-warning"
             onClick={this.switchSocketStreams}
+            data-testid="Connect"
           >
             {connectSocket ? 'Disconnect' : 'Connect'}
           </button>
         </div>
 
-        <ul className="nav nav-tabs pt-2">
+        <ul className="nav nav-tabs pt-2" data-testid="NavGrid">
           {PAIRS_LIST.map(pair => (
             <li key={pair} className="nav-item">
               <button
