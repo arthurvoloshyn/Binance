@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "d7d6b8029e05ce6dd23e714481092821",
+    "revision": "fe2f2c4715058954ff5ec7d2d6afa8f5",
     "url": "/Binance/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Binance/static/css/2.6075bf79.chunk.css"
   },
   {
-    "revision": "6333ba7fdac0775f1f77",
+    "revision": "3e415e37b5a334a19fd1",
     "url": "/Binance/static/css/main.247d7d0b.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Binance/static/js/2.f8bcce99.chunk.js"
   },
   {
-    "revision": "6333ba7fdac0775f1f77",
-    "url": "/Binance/static/js/main.413b913d.chunk.js"
+    "revision": "3e415e37b5a334a19fd1",
+    "url": "/Binance/static/js/main.bf15dada.chunk.js"
   },
   {
     "revision": "63ffe56965714144b197",

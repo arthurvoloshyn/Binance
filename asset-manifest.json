@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/Binance/static/css/main.247d7d0b.chunk.css",
-    "main.js": "/Binance/static/js/main.413b913d.chunk.js",
-    "main.js.map": "/Binance/static/js/main.413b913d.chunk.js.map",
+    "main.js": "/Binance/static/js/main.bf15dada.chunk.js",
+    "main.js.map": "/Binance/static/js/main.bf15dada.chunk.js.map",
     "runtime~main.js": "/Binance/static/js/runtime~main.6c4a5cdf.js",
     "runtime~main.js.map": "/Binance/static/js/runtime~main.6c4a5cdf.js.map",
     "static/css/2.6075bf79.chunk.css": "/Binance/static/css/2.6075bf79.chunk.css",
     "static/js/2.f8bcce99.chunk.js": "/Binance/static/js/2.f8bcce99.chunk.js",
     "static/js/2.f8bcce99.chunk.js.map": "/Binance/static/js/2.f8bcce99.chunk.js.map",
     "index.html": "/Binance/index.html",
-    "precache-manifest.c6b608cf57d4c141bcc8b887d9c6ab97.js": "/Binance/precache-manifest.c6b608cf57d4c141bcc8b887d9c6ab97.js",
+    "precache-manifest.6a5f6d890c2d381fabf38206f7161195.js": "/Binance/precache-manifest.6a5f6d890c2d381fabf38206f7161195.js",
     "service-worker.js": "/Binance/service-worker.js",
     "static/css/2.6075bf79.chunk.css.map": "/Binance/static/css/2.6075bf79.chunk.css.map",
     "static/css/main.247d7d0b.chunk.css.map": "/Binance/static/css/main.247d7d0b.chunk.css.map",
