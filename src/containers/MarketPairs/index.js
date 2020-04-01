@@ -53,17 +53,13 @@ export class MarketPairs extends Component {
   componentDidMount() {
     const { connectSocket } = this.props;
 
-    if (connectSocket) {
-      this.connectSocketStreams(this.streams);
-    }
+    connectSocket && this.connectSocketStreams(this.streams);
   }
 
   componentWillUnmount() {
     const { connectSocket } = this.props;
 
-    if (connectSocket) {
-      this.disconnectSocketStreams(this.streams);
-    }
+    connectSocket && this.disconnectSocketStreams(this.streams);
   }
 
   switchSocketStreams = () => {
@@ -115,9 +111,7 @@ export class MarketPairs extends Component {
     const joinedStreams = streams.join('/');
     const connection = btoa(joinedStreams);
 
-    if (this[connection].readyState === WebSocket.OPEN) {
-      this[connection].close();
-    }
+    this[connection].readyState === WebSocket.OPEN && this[connection].close();
 
     this[connection].onclose = () => {
       const { toggleSocketStreams } = this.props;
