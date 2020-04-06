@@ -12,6 +12,7 @@ import { getTickerBySymbol } from '../../utils';
 import Loader from '../../components/Loader';
 import Table from '../../components/Table';
 import Title from '../../components/Title';
+import Button from '../../components/Button';
 
 const { PAIRS_LIST } = LISTS;
 
@@ -153,15 +154,12 @@ export class MarketPairs extends Component {
       <>
         <Title title="The World's Leading Cryptocurrency Exchange" />
 
-        <div className="d-flex justify-content-center pt-2">
-          <button
-            className="btn btn-warning"
-            onClick={this.switchSocketStreams}
-            data-testid="Connect"
-          >
-            {connectSocket ? 'Disconnect' : 'Connect'}
-          </button>
-        </div>
+        <Button
+          onClick={this.switchSocketStreams}
+          className="btn-warning"
+          id="Connect"
+          value={connectSocket}
+        />
 
         <ul className="nav nav-tabs pt-2" data-testid="NavGrid">
           {PAIRS_LIST.map(pair => {

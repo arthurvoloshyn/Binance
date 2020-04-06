@@ -3,7 +3,3 @@
 exports[`MarketPairs container MarketPairs container initial renders properly 1`] = `ShallowWrapper {}`;
 
 exports[`MarketPairs container MarketPairs container is loaded renders properly 1`] = `ShallowWrapper {}`;
-
-exports[`MarketPairs container MarketPairs container with connectSocket MarketPairs container without connectSocket connectSocket connectSocket renders properly 1`] = `ShallowWrapper {}`;
-
-exports[`MarketPairs container MarketPairs container with connectSocket connectSocket connectSocket renders properly 1`] = `ShallowWrapper {}`;
