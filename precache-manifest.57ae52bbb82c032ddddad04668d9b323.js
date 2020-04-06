@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "67780fb246f1c7286810a268e3bd03c5",
+    "revision": "b2176e55addaee4d5e0daa1a0323053a",
     "url": "/Binance/index.html"
   },
   {
-    "revision": "fb27cfde90ad271506ca",
+    "revision": "51ff9b216d7d8bcb7ea6",
     "url": "/Binance/static/css/2.6075bf79.chunk.css"
   },
   {
-    "revision": "f8bce818f8a995208333",
+    "revision": "27d365ad9ff9486cf61d",
     "url": "/Binance/static/css/main.247d7d0b.chunk.css"
   },
   {
-    "revision": "fb27cfde90ad271506ca",
-    "url": "/Binance/static/js/2.f8bcce99.chunk.js"
+    "revision": "51ff9b216d7d8bcb7ea6",
+    "url": "/Binance/static/js/2.740b9893.chunk.js"
   },
   {
-    "revision": "f8bce818f8a995208333",
-    "url": "/Binance/static/js/main.16a60272.chunk.js"
+    "revision": "27d365ad9ff9486cf61d",
+    "url": "/Binance/static/js/main.f98b1423.chunk.js"
   },
   {
     "revision": "63ffe56965714144b197",
