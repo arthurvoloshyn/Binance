@@ -15,7 +15,7 @@ describe('Button component', () => {
         expect(button).toMatchSnapshot();
       });
 
-      it('renders Connect', () => {
+      it('renders Disconnect', () => {
         expect(button.find('button').text()).toEqual('Disconnect');
       });
     });

@@ -1,5 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`MarketPairs container Connected MarketPairs container renders properly 1`] = `ShallowWrapper {}`;
+
 exports[`MarketPairs container MarketPairs container initial renders properly 1`] = `ShallowWrapper {}`;
 
 exports[`MarketPairs container MarketPairs container is loaded renders properly 1`] = `ShallowWrapper {}`;

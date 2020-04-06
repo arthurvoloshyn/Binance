@@ -162,14 +162,18 @@ export class MarketPairs extends Component {
         />
 
         <ul className="nav nav-tabs pt-2" data-testid="NavGrid">
-          {PAIRS_LIST.map(pair => (
-            <NavItem
-              key={pair}
-              onClick={this.setActiveTab}
-              pair={pair}
-              market={market}
-            />
-          ))}
+          {PAIRS_LIST.map(pair => {
+            const active = market === pair;
+
+            return (
+              <NavItem
+                key={pair}
+                onClick={this.setActiveTab}
+                pair={pair}
+                active={active}
+              />
+            );
+          })}
         </ul>
 
         {marketPairs && market && (

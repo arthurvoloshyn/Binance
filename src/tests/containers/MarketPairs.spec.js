@@ -1,6 +1,9 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { MarketPairs } from '../../containers/MarketPairs';
+import configureStore from 'redux-mock-store';
+import ConnectedMarketPairs, {
+  MarketPairs,
+} from '../../containers/MarketPairs';
 
 describe('MarketPairs container', () => {
   const props = {
@@ -12,6 +15,8 @@ describe('MarketPairs container', () => {
     toggleSocketStreams: () => {},
   };
 
+  const mockStore = configureStore();
+
   describe('MarketPairs container initial', () => {
     const marketPairs = shallow(<MarketPairs {...props} />);
 
@@ -19,8 +24,8 @@ describe('MarketPairs container', () => {
       expect(marketPairs.find('Loader')).toHaveLength(1);
     });
 
-    it('not render <h2>', () => {
-      expect(marketPairs.find('h2')).toHaveLength(0);
+    it('not render <Title>', () => {
+      expect(marketPairs.find('Title')).toHaveLength(0);
     });
 
     it('not render <Table />', () => {
@@ -147,7 +152,7 @@ describe('MarketPairs container', () => {
       const tab = 'BNB';
 
       beforeEach(() => {
-        marketPairs.find(`[data-tab="${tab}"]`).simulate('click', {
+        marketPairs.find(`NavItem[pair="${tab}"]`).simulate('click', {
           currentTarget: {
             dataset: {
               tab,
@@ -165,7 +170,7 @@ describe('MarketPairs container', () => {
       const tab = 'BNB';
 
       beforeEach(() => {
-        marketPairs.find(`[data-tab="${tab}"]`).simulate('click', tab);
+        marketPairs.find(`NavItem[pair="${tab}"]`).simulate('click', tab);
       });
 
       it('dispatches the `setActiveMarket()` method it receives from props', () => {
@@ -205,8 +210,20 @@ describe('MarketPairs container', () => {
       const { market } = nextProps.activeMarket;
 
       expect(
-        marketPairs.find(`[data-tab="${market}"]`).prop('className'),
-      ).toEqual('nav-link active');
+        marketPairs.find(`NavItem[pair="${market}"]`).prop('active'),
+      ).toEqual(true);
+    });
+  });
+
+  describe('Connected MarketPairs container', () => {
+    const store = mockStore({});
+
+    const marketPairs = shallow(
+      <ConnectedMarketPairs store={store} {...props} />,
+    );
+
+    it('renders properly', () => {
+      expect(marketPairs).toMatchSnapshot();
     });
   });
 });

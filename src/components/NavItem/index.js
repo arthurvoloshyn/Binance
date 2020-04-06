@@ -6,8 +6,8 @@ import { LISTS } from '../../constants';
 const { PAIRS_LIST } = LISTS;
 const BTC = PAIRS_LIST[1];
 
-const NavItem = ({ onClick, pair, market, className }) => {
-  const classes = cn('nav-link', className, { active: market === pair });
+const NavItem = ({ onClick, pair, active, className }) => {
+  const classes = cn('nav-link', className, { active });
 
   return (
     <li className="nav-item">
@@ -20,15 +20,16 @@ const NavItem = ({ onClick, pair, market, className }) => {
 };
 
 NavItem.propTypes = {
+  pair: PropTypes.string,
   onClick: PropTypes.func,
-  pair: PropTypes.string.isRequired,
-  market: PropTypes.string,
+  active: PropTypes.bool,
   className: PropTypes.string,
 };
 
 NavItem.defaultProps = {
+  pair: BTC,
   onClick: () => {},
-  market: BTC,
+  active: false,
   className: '',
 };
 
