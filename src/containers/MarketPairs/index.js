@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import cn from 'classnames';
 import { PATHS, LISTS } from '../../constants';
 import {
   setActiveMarket,
@@ -13,6 +12,7 @@ import Loader from '../../components/Loader';
 import Table from '../../components/Table';
 import Title from '../../components/Title';
 import Button from '../../components/Button';
+import NavItem from '../../components/NavItem';
 
 const { PAIRS_LIST } = LISTS;
 
@@ -162,22 +162,14 @@ export class MarketPairs extends Component {
         />
 
         <ul className="nav nav-tabs pt-2" data-testid="NavGrid">
-          {PAIRS_LIST.map(pair => {
-            const classes = cn('nav-link', { active: market === pair });
-
-            return (
-              <li key={pair} className="nav-item">
-                <button
-                  className={classes}
-                  onClick={this.setActiveTab}
-                  data-tab={pair}
-                >
-                  {pair}
-                  <span className="d-none d-sm-inline"> Markets</span>
-                </button>
-              </li>
-            );
-          })}
+          {PAIRS_LIST.map(pair => (
+            <NavItem
+              key={pair}
+              onClick={this.setActiveTab}
+              pair={pair}
+              market={market}
+            />
+          ))}
         </ul>
 
         {marketPairs && market && (
