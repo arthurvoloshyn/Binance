@@ -11,6 +11,7 @@ import {
 import { getTickerBySymbol } from '../../utils';
 import Loader from '../../components/Loader';
 import Table from '../../components/Table';
+import Title from '../../components/Title';
 
 const { PAIRS_LIST } = LISTS;
 
@@ -150,9 +151,7 @@ export class MarketPairs extends Component {
 
     return (
       <>
-        <h2 className="text-center pt-2">
-          The World&apos;s Leading Cryptocurrency Exchange
-        </h2>
+        <Title title="The World's Leading Cryptocurrency Exchange" />
 
         <div className="d-flex justify-content-center pt-2">
           <button

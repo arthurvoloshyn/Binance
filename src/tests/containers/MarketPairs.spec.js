@@ -189,16 +189,6 @@ describe('MarketPairs container', () => {
 
     const marketPairs = shallow(<MarketPairs {...nextProps} />);
 
-    it('renders header', () => {
-      expect(marketPairs.find('h2').text()).toEqual(
-        "The World's Leading Cryptocurrency Exchange",
-      );
-    });
-
-    it('render only one <h2>', () => {
-      expect(marketPairs.find('h2')).toHaveLength(1);
-    });
-
     it('renders <Table /> template', () => {
       expect(marketPairs.find('Table')).toHaveLength(1);
     });
