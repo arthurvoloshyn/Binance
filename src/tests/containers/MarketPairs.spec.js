@@ -226,4 +226,22 @@ describe('MarketPairs container', () => {
       expect(marketPairs).toMatchSnapshot();
     });
   });
+
+  describe('MarketPairs container with default props', () => {
+    const nextProps = {};
+
+    const marketPairs = shallow(<MarketPairs {...nextProps} />);
+
+    it('renders properly', () => {
+      expect(marketPairs).toMatchSnapshot();
+    });
+
+    it('not render <Table />', () => {
+      expect(marketPairs.find('Table')).toHaveLength(0);
+    });
+
+    it('renders <Loader />', () => {
+      expect(marketPairs.find('Loader')).toHaveLength(1);
+    });
+  });
 });

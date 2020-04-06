@@ -5,3 +5,5 @@ exports[`MarketPairs container Connected MarketPairs container renders properly 
 exports[`MarketPairs container MarketPairs container initial renders properly 1`] = `ShallowWrapper {}`;
 
 exports[`MarketPairs container MarketPairs container is loaded renders properly 1`] = `ShallowWrapper {}`;
+
+exports[`MarketPairs container MarketPairs container with default props renders properly 1`] = `ShallowWrapper {}`;
