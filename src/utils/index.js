@@ -2,8 +2,10 @@ import { LISTS } from '../constants';
 
 const { TABLE_DATA_LIST } = LISTS;
 
+export const isEmptyArray = arr => arr.every(el => !el);
+
 export const getDataListWithValues = (list = TABLE_DATA_LIST, ...data) => {
-  if (!data.length) return list;
+  if (isEmptyArray(data)) return list;
 
   const [
     symbol,
