@@ -3,6 +3,8 @@ import { LISTS } from '../constants';
 const { TABLE_DATA_LIST } = LISTS;
 
 export const getDataListWithValues = (list = TABLE_DATA_LIST, ...data) => {
+  if (!data.length) return list;
+
   const [
     symbol,
     latestPrice,
@@ -11,8 +13,6 @@ export const getDataListWithValues = (list = TABLE_DATA_LIST, ...data) => {
     lowPrice,
     quoteVolume,
   ] = data;
-
-  if (!data.length) return list;
 
   return list.map(item => {
     switch (item.title) {
