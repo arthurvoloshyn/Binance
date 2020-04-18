@@ -2,7 +2,7 @@ import { LISTS } from '../constants';
 
 const { TABLE_DATA_LIST } = LISTS;
 
-export const isEmptyArray = arr => arr.every(el => !el);
+export const isEmptyArray = (arr = []) => arr.every(el => !el);
 
 export const getDataListWithValues = (list = TABLE_DATA_LIST, ...data) => {
   if (isEmptyArray(data)) return list;
