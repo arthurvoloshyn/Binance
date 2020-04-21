@@ -6,7 +6,7 @@ describe('Loader component', () => {
   const loader = shallow(<Loader />);
 
   it('renders properly', () => {
-    expect(loader).toMatchSnapshot();
+    expect(loader.html()).toMatchSnapshot();
   });
 
   it('renders 4 dots', () => {

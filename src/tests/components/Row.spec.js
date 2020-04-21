@@ -15,7 +15,7 @@ describe('Row component', () => {
   const row = shallow(<Row {...props} />);
 
   it('renders properly', () => {
-    expect(row).toMatchSnapshot();
+    expect(row.html()).toMatchSnapshot();
   });
 
   it('renders table item', () => {

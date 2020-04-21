@@ -11,7 +11,7 @@ describe('Title component', () => {
     const title = shallow(<Title {...props} />);
 
     it('renders properly', () => {
-      expect(title).toMatchSnapshot();
+      expect(title.html()).toMatchSnapshot();
     });
 
     it('renders <h2>', () => {
@@ -31,7 +31,7 @@ describe('Title component', () => {
     const title = shallow(<Title {...props} />);
 
     it('renders properly', () => {
-      expect(title).toMatchSnapshot();
+      expect(title.html()).toMatchSnapshot();
     });
 
     it('renders title text', () => {

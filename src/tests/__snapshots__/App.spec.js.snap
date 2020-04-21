@@ -1,3 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`App renders properly 1`] = `ShallowWrapper {}`;
+exports[`App renders properly 1`] = `
+"<Provider store={{...}}>
+  <BrowserRouter basename=\\"/Binance/\\">
+    <Header />
+    <main className=\\"main\\" data-testid=\\"MainWrapper\\">
+      <section className=\\"container-fluid\\">
+        <div className=\\"row\\">
+          <div className=\\"col-12\\">
+            <Route exact={true} path=\\"/\\" component={{...}} />
+          </div>
+        </div>
+      </section>
+    </main>
+  </BrowserRouter>
+</Provider>"
+`;

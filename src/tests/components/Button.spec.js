@@ -12,7 +12,7 @@ describe('Button component', () => {
       const button = shallow(<Button {...props} />);
 
       it('renders properly', () => {
-        expect(button).toMatchSnapshot();
+        expect(button.html()).toMatchSnapshot();
       });
 
       it('renders Disconnect', () => {
@@ -28,7 +28,7 @@ describe('Button component', () => {
       const button = shallow(<Button {...props} />);
 
       it('renders properly', () => {
-        expect(button).toMatchSnapshot();
+        expect(button.html()).toMatchSnapshot();
       });
 
       it('renders Connect', () => {
@@ -47,7 +47,7 @@ describe('Button component', () => {
     const button = shallow(<Button {...props} />);
 
     it('renders properly', () => {
-      expect(button).toMatchSnapshot();
+      expect(button.html()).toMatchSnapshot();
     });
 
     describe('when clicking the button', () => {
@@ -69,7 +69,7 @@ describe('Button component', () => {
     const button = shallow(<Button {...props} />);
 
     it('renders properly', () => {
-      expect(button).toMatchSnapshot();
+      expect(button.html()).toMatchSnapshot();
     });
 
     it('renders id', () => {
@@ -85,7 +85,7 @@ describe('Button component', () => {
     const button = shallow(<Button {...props} />);
 
     it('renders properly', () => {
-      expect(button).toMatchSnapshot();
+      expect(button.html()).toMatchSnapshot();
     });
 
     it('renders className', () => {
@@ -102,7 +102,7 @@ describe('Button component', () => {
     const button = shallow(<Button {...props} />);
 
     it('renders properly', () => {
-      expect(button).toMatchSnapshot();
+      expect(button.html()).toMatchSnapshot();
     });
 
     it('renders default button value', () => {

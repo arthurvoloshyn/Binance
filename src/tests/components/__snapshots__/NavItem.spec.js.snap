@@ -1,13 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`NavItem component NavItem component active prop NavItem component with negative active renders properly 1`] = `ShallowWrapper {}`;
+exports[`NavItem component NavItem component active prop NavItem component with negative active renders properly 1`] = `"<li class=\\"nav-item\\"><button class=\\"nav-link\\" data-tab=\\"BTC\\">BTC<span class=\\"d-none d-sm-inline\\"> Markets</span></button></li>"`;
 
-exports[`NavItem component NavItem component active prop NavItem component with positive active renders properly 1`] = `ShallowWrapper {}`;
+exports[`NavItem component NavItem component active prop NavItem component with positive active renders properly 1`] = `"<li class=\\"nav-item\\"><button class=\\"nav-link active\\" data-tab=\\"BTC\\">BTC<span class=\\"d-none d-sm-inline\\"> Markets</span></button></li>"`;
 
-exports[`NavItem component NavItem component onClick prop renders properly 1`] = `ShallowWrapper {}`;
+exports[`NavItem component NavItem component onClick prop renders properly 1`] = `"<li class=\\"nav-item\\"><button class=\\"nav-link\\" data-tab=\\"BTC\\">BTC<span class=\\"d-none d-sm-inline\\"> Markets</span></button></li>"`;
 
-exports[`NavItem component NavItem component with className renders properly 1`] = `ShallowWrapper {}`;
+exports[`NavItem component NavItem component with className renders properly 1`] = `"<li class=\\"nav-item\\"><button class=\\"nav-link btn\\" data-tab=\\"BTC\\">BTC<span class=\\"d-none d-sm-inline\\"> Markets</span></button></li>"`;
 
-exports[`NavItem component NavItem component with default props renders properly 1`] = `ShallowWrapper {}`;
+exports[`NavItem component NavItem component with default props renders properly 1`] = `"<li class=\\"nav-item\\"><button class=\\"nav-link\\" data-tab=\\"BTC\\">BTC<span class=\\"d-none d-sm-inline\\"> Markets</span></button></li>"`;
 
-exports[`NavItem component NavItem component with pair renders properly 1`] = `ShallowWrapper {}`;
+exports[`NavItem component NavItem component with pair renders properly 1`] = `"<li class=\\"nav-item\\"><button class=\\"nav-link\\" data-tab=\\"BTC\\">BTC<span class=\\"d-none d-sm-inline\\"> Markets</span></button></li>"`;

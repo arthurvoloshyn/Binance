@@ -22,7 +22,7 @@ describe('Table component', () => {
     const table = shallow(<Table {...props} />);
 
     it('renders properly', () => {
-      expect(table).toMatchSnapshot();
+      expect(table.html()).toMatchSnapshot();
     });
 
     it('renders 2 rows', () => {
@@ -66,7 +66,7 @@ describe('Table component', () => {
     const table = shallow(<Table {...props} />);
 
     it('renders properly', () => {
-      expect(table).toMatchSnapshot();
+      expect(table.html()).toMatchSnapshot();
     });
 
     it('not render rows', () => {

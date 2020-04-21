@@ -1,13 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Button component Button component onClick prop renders properly 1`] = `ShallowWrapper {}`;
+exports[`Button component Button component onClick prop renders properly 1`] = `"<div class=\\"d-flex justify-content-center pt-2\\"><button class=\\"btn\\" data-testid=\\"\\">Disconnect</button></div>"`;
 
-exports[`Button component Button component value prop Button component with negative value renders properly 1`] = `ShallowWrapper {}`;
+exports[`Button component Button component value prop Button component with negative value renders properly 1`] = `"<div class=\\"d-flex justify-content-center pt-2\\"><button class=\\"btn\\" data-testid=\\"\\">Connect</button></div>"`;
 
-exports[`Button component Button component value prop Button component with positive value renders properly 1`] = `ShallowWrapper {}`;
+exports[`Button component Button component value prop Button component with positive value renders properly 1`] = `"<div class=\\"d-flex justify-content-center pt-2\\"><button class=\\"btn\\" data-testid=\\"\\">Disconnect</button></div>"`;
 
-exports[`Button component Button component with className renders properly 1`] = `ShallowWrapper {}`;
+exports[`Button component Button component with className renders properly 1`] = `"<div class=\\"d-flex justify-content-center pt-2\\"><button class=\\"btn btn-warning\\" data-testid=\\"\\">Disconnect</button></div>"`;
 
-exports[`Button component Button component with default props renders properly 1`] = `ShallowWrapper {}`;
+exports[`Button component Button component with default props renders properly 1`] = `"<div class=\\"d-flex justify-content-center pt-2\\"><button class=\\"btn\\" data-testid=\\"\\">Disconnect</button></div>"`;
 
-exports[`Button component Button component with id renders properly 1`] = `ShallowWrapper {}`;
+exports[`Button component Button component with id renders properly 1`] = `"<div class=\\"d-flex justify-content-center pt-2\\"><button class=\\"btn\\" data-testid=\\"Connect\\">Disconnect</button></div>"`;

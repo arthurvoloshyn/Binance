@@ -12,7 +12,7 @@ describe('NavItem component', () => {
       const navItem = shallow(<NavItem {...props} />);
 
       it('renders properly', () => {
-        expect(navItem).toMatchSnapshot();
+        expect(navItem.html()).toMatchSnapshot();
       });
 
       it('renders active', () => {
@@ -30,7 +30,7 @@ describe('NavItem component', () => {
       const navItem = shallow(<NavItem {...props} />);
 
       it('renders properly', () => {
-        expect(navItem).toMatchSnapshot();
+        expect(navItem.html()).toMatchSnapshot();
       });
 
       it('renders nav-link', () => {
@@ -49,7 +49,7 @@ describe('NavItem component', () => {
     const navItem = shallow(<NavItem {...props} />);
 
     it('renders properly', () => {
-      expect(navItem).toMatchSnapshot();
+      expect(navItem.html()).toMatchSnapshot();
     });
 
     describe('when clicking the button', () => {
@@ -71,7 +71,7 @@ describe('NavItem component', () => {
     const navItem = shallow(<NavItem {...props} />);
 
     it('renders properly', () => {
-      expect(navItem).toMatchSnapshot();
+      expect(navItem.html()).toMatchSnapshot();
     });
 
     it('renders pair', () => {
@@ -91,7 +91,7 @@ describe('NavItem component', () => {
     const navItem = shallow(<NavItem {...props} />);
 
     it('renders properly', () => {
-      expect(navItem).toMatchSnapshot();
+      expect(navItem.html()).toMatchSnapshot();
     });
 
     it('renders className', () => {
@@ -108,7 +108,7 @@ describe('NavItem component', () => {
     const navItem = shallow(<NavItem {...props} />);
 
     it('renders properly', () => {
-      expect(navItem).toMatchSnapshot();
+      expect(navItem.html()).toMatchSnapshot();
     });
 
     describe('NavItem component pair prop', () => {

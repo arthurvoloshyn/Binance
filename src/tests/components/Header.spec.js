@@ -6,7 +6,7 @@ describe('Header component', () => {
   const header = shallow(<Header />);
 
   it('renders properly', () => {
-    expect(header).toMatchSnapshot();
+    expect(header.debug()).toMatchSnapshot();
   });
 
   it('renders header', () => {

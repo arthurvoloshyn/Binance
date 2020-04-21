@@ -1,5 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Title component Title component with default props renders properly 1`] = `ShallowWrapper {}`;
+exports[`Title component Title component with default props renders properly 1`] = `"<h2 class=\\"text-center pt-2\\">Simple title</h2>"`;
 
-exports[`Title component Title component with title renders properly 1`] = `ShallowWrapper {}`;
+exports[`Title component Title component with title renders properly 1`] = `"<h2 class=\\"text-center pt-2\\">The World&#x27;s Leading Cryptocurrency Exchange</h2>"`;

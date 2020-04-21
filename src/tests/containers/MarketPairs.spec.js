@@ -33,7 +33,7 @@ describe('MarketPairs container', () => {
     });
 
     it('renders properly', () => {
-      expect(marketPairs).toMatchSnapshot();
+      expect(marketPairs.html()).toMatchSnapshot();
     });
   });
 
@@ -186,9 +186,15 @@ describe('MarketPairs container', () => {
         market: 'BTC',
       },
       marketPairs: {
-        BNBBTC: {},
-        ETHUSDT: {},
-        ENJBTC: {},
+        BNBBTC: {
+          symbol: 'BNBBTC',
+        },
+        ETHUSDT: {
+          symbol: 'ETHUSDT',
+        },
+        ENJBTC: {
+          symbol: 'ENJBTC',
+        },
       },
     };
 
@@ -203,7 +209,7 @@ describe('MarketPairs container', () => {
     });
 
     it('renders properly', () => {
-      expect(marketPairs).toMatchSnapshot();
+      expect(marketPairs.html()).toMatchSnapshot();
     });
 
     it('renders class active', () => {
@@ -223,7 +229,7 @@ describe('MarketPairs container', () => {
     );
 
     it('renders properly', () => {
-      expect(marketPairs).toMatchSnapshot();
+      expect(marketPairs.html()).toMatchSnapshot();
     });
   });
 
@@ -233,7 +239,7 @@ describe('MarketPairs container', () => {
     const marketPairs = shallow(<MarketPairs {...nextProps} />);
 
     it('renders properly', () => {
-      expect(marketPairs).toMatchSnapshot();
+      expect(marketPairs.html()).toMatchSnapshot();
     });
 
     it('not render <Table />', () => {

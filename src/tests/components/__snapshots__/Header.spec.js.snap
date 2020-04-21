@@ -1,3 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Header component renders properly 1`] = `ShallowWrapper {}`;
+exports[`Header component renders properly 1`] = `
+"<header>
+  <nav className=\\"navbar navbar-expand-sm navbar-dark bg-dark\\">
+    <Link className=\\"navbar-brand\\" to=\\"/\\">
+      <img src=\\"logo.svg\\" height=\\"25\\" alt=\\"Binance Logo\\" />
+    </Link>
+    <div className=\\"navbar-text\\">
+      <span className=\\"small text-white\\">
+        Trade history viewer web app
+      </span>
+    </div>
+  </nav>
+</header>"
+`;
