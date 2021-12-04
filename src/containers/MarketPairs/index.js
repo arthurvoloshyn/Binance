@@ -43,7 +43,7 @@ export class MarketPairs extends Component {
     const {
       marketPairs,
       activeMarket: { market },
-    } = props;
+    } = this.props;
 
     this.state = {
       isLoaded: marketPairs && market,
